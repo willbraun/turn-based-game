@@ -23,7 +23,8 @@
 
 <body>
 
-    <class class="container">
+    <main class="container">
+
         <div class="opening-screen d-flex justify-content-center align-items-center flex-column">
             <h1>Food Fight</h1>
             <p>Choose your character</p>
@@ -42,7 +43,35 @@
                 </div>
             </div>
         </div>
-    </class>
+
+        <div class="game-screen">
+            
+        
+        </div>
+
+
+
+
+
+        <script id="hero-template" type="text/x-handlebars-template">
+            
+                <div class="hero-wrapper">
+                    <div class="hero-health"><span>{{this.health}}</span></div>
+                    <div class="hero-entity">{{this.name}}</div>
+                    <div class="hero-options row">
+                        <button class="attack-btn btn btn-danger col-6">Attack!</button>
+                        <button class="consume-btn btn btn-success col-6">Eat!</button>
+                    </div>
+                </div>
+        </script>
+
+
+        <script id="enemy-template" type="text/x-handlebars-template">
+
+            
+
+        </script>
+    </main>
 
 </body>
 
