@@ -1,0 +1,1 @@
+import { Character, Hero, Enemy } from './classes.js';

@@ -1,32 +1,39 @@
-class Character {
+export class Character {
     constructor(name, health) {
         this.name = name;
         this.health = health;
+        this.currentFood = null;
     }
 
     throw(food, target) {
-        target.health =- food.damage;
+        target.health -= food.damage;
     }
 
     consume(food) {
         this.health += food.nutrition;
     }
+
+    generateFood() {
+        
+    };
 }
 
-class Player extends Character {
+export class Hero extends Character {
     constructor(name, health) {
         super(name);
         super(health);
+        super(currentFood);
     }
 }
 
-class Enemy extends Character {
+export class Enemy extends Character {
     constructor(name, health) {
         super(name);
         super(health);
+        super(currentFood);
     }
 
-    randomMove() {
+    randomMove(food, target) {
         if (Math.random() > 0.5) {
             this.throw(food, target);
         }
