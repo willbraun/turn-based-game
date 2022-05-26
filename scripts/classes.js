@@ -35,3 +35,10 @@ class Enemy extends Character {
         }
     }
 }
+
+class Game {
+    constructor(selectedHero, generatedEnemy) {
+        this.selectedHero = selectedHero;
+        this.generatedEnemy = generatedEnemy;
+    }
+}
