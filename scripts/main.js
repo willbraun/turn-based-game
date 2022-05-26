@@ -1,6 +1,21 @@
 import { Game, Hero, Enemy } from './classes.js';
 
-const mario = new Hero('Mario', 100);
-const bowser = new Enemy('Bowser', 200);
-console.log(mario);
-console.log(bowser);
+// EDIT SELECTORS
+
+// prompt user to select hero
+document.querySelector('.hero1button').addEventListener('click', () => {
+    const hero = new Hero('kid1', 100)
+});
+
+
+
+// autogenerate enemy randomly
+// const game = new Game(hero object, enemy object)
+
+// player.generateFood to show food on screen
+
+// click throw
+
+// click consume
+
+
