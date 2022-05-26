@@ -25,3 +25,33 @@ const food = [
        damage: 0
        }
 ];
+
+const heros = [
+    {
+        name: 'kid 1',
+        health: 100
+    },
+    {
+        name: 'kid 2',
+        health: 100
+    },
+    {
+        name: 'kid 3',
+        health: 100
+    }
+]
+
+const enemies = [
+    {
+        name: 'enemy 1',
+        health: 100
+    },
+    {
+        name: 'enemy 2',
+        health: 100
+    },
+    {
+        name: 'enemy 3',
+        health: 100
+    }
+]
