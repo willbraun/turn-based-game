@@ -1,8 +1,10 @@
 import { Game, Hero, Enemy } from './classes.js';
 
-let hero = {name: 'mario', health: 100};
-let enemy = {name: 'bowser', health: 100};
+let testHero = new Hero('mario', 100);
+let testEnemy = new Enemy('bowser', 100);
 
+console.log(testHero);
+console.log(testEnemy);
 // prompt user to select hero
 document.querySelector('.hero1button').addEventListener('click', () => {
     const hero = new Hero('kid1', 100)
