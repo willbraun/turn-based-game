@@ -13,24 +13,20 @@ export class Character {
         this.health += food.nutrition;
     }
 
-    generateFood() {
-        
+    generateFood(foodArray) {
+        this.currentFood = foodArray[Math.floor(Math.random() * foodArray.length)];
     };
 }
 
 export class Hero extends Character {
-    constructor(name, health) {
-        super(name);
-        super(health);
-        super(currentFood);
+    constructor(name, health, currentFood) {
+        super(name, health, currentFood);
     }
 }
 
 export class Enemy extends Character {
-    constructor(name, health) {
-        super(name);
-        super(health);
-        super(currentFood);
+    constructor(name, health, currentFood) {
+        super(name, health, currentFood);
     }
 
     randomMove(food, target) {
@@ -43,7 +39,7 @@ export class Enemy extends Character {
     }
 }
 
-class Game {
+export class Game {
     constructor(selectedHero, generatedEnemy) {
         this.selectedHero = selectedHero;
         this.generatedEnemy = generatedEnemy;
