@@ -31,15 +31,15 @@
             <div class="characters d-flex flex-row m-2">
                 <div class="hero hero-one m-3 text-center">
                     <div class="hero-photo">👨‍🎨</div>
-                    <button class="select-hero">Select</button>
+                    <button class="select-hero-one">Select</button>
                 </div>
                 <div class="hero hero-two m-3 text-center">
                     <div class="hero-photo">👨‍🚀</div>
-                    <button class="select-hero">Select</button>
+                    <button class="select-hero-two">Select</button>
                 </div>
                 <div class="hero hero-three m-3 text-center">
                     <div class="hero-photo">👨‍🏭</div>
-                    <button class="select-hero">Select</button>
+                    <button class="select-hero-three">Select</button>
                 </div>
             </div>
         </div>
@@ -47,6 +47,10 @@
         <div class="game-screen">
             
         
+            <div class="hero-options row">
+                <button class="attack-btn btn btn-danger col-6">Attack!</button>
+                <button class="consume-btn btn btn-success col-6">Eat!</button>
+            </div>
         </div>
 
 
@@ -58,10 +62,6 @@
                 <div class="hero-wrapper">
                     <div class="hero-health"><span>{{this.health}}</span></div>
                     <div class="hero-entity">{{this.name}}</div>
-                    <div class="hero-options row">
-                        <button class="attack-btn btn btn-danger col-6">Attack!</button>
-                        <button class="consume-btn btn btn-success col-6">Eat!</button>
-                    </div>
                 </div>
         </script>
 
