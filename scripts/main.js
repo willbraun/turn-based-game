@@ -23,11 +23,11 @@ const buttonThree = document.querySelector('.select-hero-three');
 const startScreen = document.querySelector('.opening-screen');
 const attackButton = document.querySelector('.attack-btn');
 const eatButton = document.querySelector('.eat-btn');
-let hero, enemy;
+// let hero, enemy;
 
-function getRandomFoodItem() {
-    return food[Math.floor(Math.random() * 5)];
-}
+// function getRandomFoodItem() {
+//     return food[Math.floor(Math.random() * 5)];
+// }
 
 
 buttonOne.addEventListener('click', () => {
@@ -44,10 +44,24 @@ buttonOne.addEventListener('click', () => {
 
 // player.generateFood to show food on screen
 testHero.generateFood();
-console.log(testHero);
 
-// click throw
-attackButton.addEventListener('click', attack(food, enemy));
+// click attack
+testHero.attack.call(testHero, testEnemy);
+console.log(testEnemy);
 
+
+// testHero.attack(testHero.currentFood, testEnemy);
+// 
+
+
+
+// attackButton.addEventListener('click', attack);
+
+<<<<<<< HEAD
 // click consume
 eatButton.addEventListener('click', eat(food));
+=======
+// click eat
+
+
+>>>>>>> bbcd9d9 (got attack function working)
