@@ -12,6 +12,7 @@ console.log(enemy);
 
 let hero;
 let testHero = new Hero(getRandom(heros));
+console.log(testHero);
 
 
 // document.querySelector('.hero1button').addEventListener('click', () => {
@@ -53,3 +54,4 @@ attackButton.addEventListener('click', () => {
 
 // click consume
 eatButton.addEventListener('click', eat(food));
+

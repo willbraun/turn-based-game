@@ -34,7 +34,7 @@ export class Enemy extends Character {
 
     randomMove(food, target) {
         if (Math.random() > 0.5) {
-            this.attack(food, target);
+            this.attack(target);
         }
         else {
             this.eat(food);
