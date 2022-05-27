@@ -9,17 +9,20 @@ let hero;
 
 // prompt user to select hero (randomly selected now for testing)
 
-// let hero;
-// let testHero = new Hero(getRandom(heros));
-// console.log(testHero);
+let hero;
+let testHero = new Hero({name: 'kid1', health: 100});
 
-const selectWill = document.querySelector('.select-hero-one');
-const selectMatt = document.querySelector('.select-hero-two');
-const selectLevi = document.querySelector('.select-hero-three');
+/// HANDLEBARS TEMPLATE
+
+
+const buttonOne = document.querySelector('.select-hero-one');
+const buttonTwo = document.querySelector('.select-hero-two');
+const buttonThree = document.querySelector('.select-hero-three');
 const startScreen = document.querySelector('.opening-screen');
 const gameScreen = document.querySelector('.game-screen');
-
-
+const attackButton = document.querySelector('.attack-btn');
+const eatButton = document.querySelector('.eat-btn');
+const audio = document.getElementById('characterSelect')
 
 /// generate hero function 
 // let hero;
@@ -38,7 +41,10 @@ function loadHeroTemplate(hero) {
 
 
 
-selectWill.addEventListener('click', () => {
+buttonOne.addEventListener('click', () => {
+    audio.play();
+    hero = new Hero('kid1', 100);
+    enemy = new Enemy('bully1', 100);
     /// needs to initiate game screen and remove character choice screen after clicking button
     /// make classes for html elements to show and hide from screens
     /// need to position start screen over main game screen and reveal game screen when button is cicked
@@ -81,7 +87,14 @@ attackButton.addEventListener('click', () => {
     console.log(enemy);
 });
 
-const enemyTurn = 
+
+// click consume
+const eat = hero.eat.bind(testHero)
+eatButton.addEventListener('click', () => {
+
+    eat(testHero.currentFood);
+    console.log(testHero);
+});
 
 // enemy random move
 enemy.generateFood();
