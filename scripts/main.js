@@ -22,6 +22,7 @@ const buttonOne = document.querySelector('.select-hero-one');
 const buttonTwo = document.querySelector('.select-hero-two');
 const buttonThree = document.querySelector('.select-hero-three');
 const startScreen = document.querySelector('.opening-screen');
+const gameScreen = document.querySelector('.game-screen');
 const attackButton = document.querySelector('.attack-btn');
 const eatButton = document.querySelector('.eat-btn');
 
@@ -33,6 +34,9 @@ buttonOne.addEventListener('click', () => {
     /// make classes for html elements to show and hide from screens
     startScreen.classList.add('off-screen'); /// this move start screen out of the way, 
     /// need to position start screen over main game screen and reveal game screen when button is cicked
+    setTimeout(() => {
+        gameScreen.classList.remove('hidden');
+    }, 450);
 })
 
 
