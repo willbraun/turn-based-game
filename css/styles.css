@@ -33,9 +33,13 @@ body {
 }
 .opening-screen button {
   padding: 0.5rem 1rem;
-  border: none;
+  border: 1px solid #222;
   background-color: #d15614;
   border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+}
+.opening-screen button:hover {
+  border: 2px solid black;
 }
 
 .off-screen {
