@@ -24,19 +24,15 @@ const buttonThree = document.querySelector('.select-hero-three');
 const startScreen = document.querySelector('.opening-screen');
 const attackButton = document.querySelector('.attack-btn');
 const eatButton = document.querySelector('.eat-btn');
-// let hero, enemy;
-
-// function getRandomFoodItem() {
-//     return food[Math.floor(Math.random() * 5)];
-// }
 
 
 buttonOne.addEventListener('click', () => {
     hero = new Hero('kid1', 100);
     enemy = new Enemy('bully1', 100);
-    // needs to initiate game screen and remove character choice screen after clicking button
-    //make classes for html elements to show and hide from screens
-    
+    /// needs to initiate game screen and remove character choice screen after clicking button
+    /// make classes for html elements to show and hide from screens
+    startScreen.classList.add('off-screen'); /// this move start screen out of the way, 
+    /// need to position start screen over main game screen and reveal game screen when button is cicked
 })
 
 

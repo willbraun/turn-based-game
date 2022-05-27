@@ -1,26 +1,31 @@
 export const foods = [
     {   
         name: 'watermelon',
+        icon: '🍉',         /// emojis are here so there's something to display
         nutrition: 10,
         damage: 10
     },
     {
         name: 'apple',
+        icon: '🍎',
         nutrition: 8,
         damage: 8
     },
     {
         name: 'cake',
+        icon: '🍰',
         nutrition: 1,
         damage: 5
     },
     {
-        name: 'celery',
+        name: 'broccoli',
+        icon: '🥦',
         nutrition: 5,
         damage: 1
     },
     {
         name: 'lollipop',
+        icon: '🍭',
         nutrition: 1,
         damage: 1
     }
