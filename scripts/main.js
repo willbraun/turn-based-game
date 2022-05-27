@@ -50,7 +50,6 @@ selectWill.addEventListener('click', () => {
     /// need to position start screen over main game screen and reveal game screen when button is cicked
     startScreen.classList.add('off-screen'); 
     setTimeout(() => {
-<<<<<<< HEAD
         hero = generateHeroOne();
         hero.generateFood();
         loadHeroTemplate(generateHeroOne());
@@ -71,15 +70,11 @@ selectWill.addEventListener('click', () => {
         });
 
         // console.log(heroOne);
-=======
         loadHeroTemplate(generateHero('will', 120, 1.2));
->>>>>>> 7c50d56 (refactors select button listeners with unique hero choices)
         /// this moves start screen out of the way
         gameScreen.classList.remove('hidden')
     }, 450);
 
-<<<<<<< HEAD
-=======
 
 selectMatt.addEventListener('click', () => {
     startScreen.classList.add('off-screen'); 
@@ -110,7 +105,6 @@ console.log(testHero);
 attackButton.addEventListener('click', () => {
     attack(enemy);
     console.log(enemy);
->>>>>>> 7c50d56 (refactors select button listeners with unique hero choices)
 });
 
 const enemyTurn = 
