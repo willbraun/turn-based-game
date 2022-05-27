@@ -113,7 +113,7 @@ attackButton.addEventListener('click', () => {
 >>>>>>> 7c50d56 (refactors select button listeners with unique hero choices)
 });
 
-
+const enemyTurn = 
 
 // enemy random move
 enemy.generateFood();
@@ -123,5 +123,3 @@ setTimeout(() => {
     randomMove(hero);
     console.log(hero, enemy);
     }, 8000);
-
-
