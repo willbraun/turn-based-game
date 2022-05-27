@@ -27,4 +27,13 @@ body {
   background-color: #333;
 }
 
+.food-display {
+  font-size: 2rem;
+}
+.food-display .food-item {
+  padding: 1rem;
+  background-color: #AAA;
+  border-radius: 50%;
+}
+
 /*# sourceMappingURL=styles.css.map */

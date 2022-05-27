@@ -26,3 +26,13 @@ body {
     left: 0;
     background-color: #333;
 }
+
+.food-display {
+    font-size: 2rem;
+
+    .food-item {
+        padding: 1rem;
+        background-color: #AAA;
+        border-radius: 50%;
+    }
+}
