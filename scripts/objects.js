@@ -49,14 +49,17 @@ export const foods = [
 export const enemies = [
     {
         name: 'enemy 1',
-        health: 100
+        health: 120,
+        powerLevel: 0.8
     },
     {
         name: 'enemy 2',
-        health: 100
+        health: 50,
+        powerLevel: 2,
     },
     {
         name: 'enemy 3',
-        health: 100
+        health: 100,
+        powerLevel: 1.1
     }
 ]
