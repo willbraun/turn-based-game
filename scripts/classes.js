@@ -12,8 +12,8 @@ export class Character {
         target.health -= this.currentFood.damage;
     }
 
-    eat(food) {
-        this.health += food.nutrition;
+    eat() {
+        this.health += this.currentFood.nutrition;
     }
 
     generateFood() {

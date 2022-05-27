@@ -55,7 +55,11 @@ attackButton.addEventListener('click', () => {
 // click consume
 const eat = testHero.eat.bind(testHero)
 eatButton.addEventListener('click', () => {
+<<<<<<< HEAD
     eat(testHero.currentFood);
+=======
+    eat();
+>>>>>>> 0eecb7f (updated eat function to be based on this)
     console.log(testHero);
 });
 
