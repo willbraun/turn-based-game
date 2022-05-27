@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turn-Based Game</title>
-    
+
     <link href="http://fonts.cdnfonts.com/css/ssf4-abuket" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -69,33 +69,39 @@
         </div>
 
 
-        <div class="game-screen hidden d-flex justify-content-center align-items-center w-100 h-25">
-       
+        <div class="game-screen hidden w-100 h-100">
+
         </div>
-        
-        
-        
-        
-        
+
+
+
+
+
         <script id="hero-template" type="text/x-handlebars-template">
-                <div class="hero-health"><span>{{this.health}}</span></div>
-                <div class="hero-entity">{{this.name}}</div>
-                <div class="row w-50">
-                    <div class="food-display col d-flex justify-content-end">
-                        <span class="food-item">{{this.currentFood}}</span>
+            <div class="game-wrapper">
+
+                <div class="hero-wrapper d-flex align-items-center justify-content-end h-25 w-100">
+
+                    <div class="hero-health"><span>{{this.health}}</span></div>
+                    <div class="hero-entity">{{this.name}}</div>
+                    <div class="row w-25">
+                        <div class="food-display col d-flex justify-content-end">
+                            <span class="food-item">{{this.currentFood.icon}}</span>
+                        </div>
+                    </div>
+                
+                    <div class="hero-options row w-100 justify-content-end">
+                        <button class="attack-btn btn btn-danger col-6 m-3">Attack!</button>
+                        <button class="eat-btn btn btn-success col-6 m-3">Eat!</button>
                     </div>
                 </div>
-            
-                <div class="hero-options row w-100 justify-content-end">
-                    <button class="attack-btn btn btn-danger col-6 m-3">Attack!</button>
-                    <button class="eat-btn btn btn-success col-6 m-3">Eat!</button>
-                </div>
+            </div>
         </script>
 
 
         <script id="enemy-template" type="text/x-handlebars-template">
 
-            
+
 
         </script>
     </main>

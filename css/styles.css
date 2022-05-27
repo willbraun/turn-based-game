@@ -55,7 +55,15 @@ body {
   position: absolute;
   bottom: 0;
   left: 0;
+  background-color: #AAA;
+}
+
+.hero-wrapper {
   background-color: #333;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
 }
 
 .food-display {

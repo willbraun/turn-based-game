@@ -4,7 +4,6 @@ body {
     font-family: 'Permanent Marker', cursive;
     position: relative;
     height: 100vh;
-    // background-color: #000;
 }
 
 .hidden {
@@ -60,7 +59,15 @@ body {
     position: absolute;
     bottom: 0;
     left: 0;
+    background-color: #AAA;
+}
+
+.hero-wrapper {
     background-color: #333;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
 }
 
 .food-display {
