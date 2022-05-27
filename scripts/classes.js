@@ -2,14 +2,15 @@ import { foods } from './objects.js';
 import { getRandom } from './helpers.js';
 
 export class Character {
-    constructor({name, health}) {
+    constructor({name, health, powerLevel}) {
         this.name = name;
         this.health = health;
         this.currentFood = null;
+        this.powerLevel = powerLevel;
     }
 
     attack(target) {
-        target.health -= this.currentFood.damage;
+        target.health -= (this.currentFood.damage * this.powerLevel);
     }
 
     eat() {

@@ -9,12 +9,9 @@ let enemy = new Enemy(getRandom(enemies));
 
 // prompt user to select hero (randomly selected now for testing)
 
-let hero;
-let testHero = new Hero('kid1', 100);
-
-
-/// HANDLEBARS TEMPLATE
-
+// let hero;
+// let testHero = new Hero(getRandom(heros));
+// console.log(testHero);
 
 const buttonOne = document.querySelector('.select-hero-one');
 const buttonTwo = document.querySelector('.select-hero-two');
@@ -25,26 +22,35 @@ const attackButton = document.querySelector('.attack-btn');
 const eatButton = document.querySelector('.eat-btn');
 
 
-buttonOne.addEventListener('click', () => {
-    hero = new Hero('kid1', 100);
+/// generate hero function 
+// let hero;
+function generateHeroOne() {
+    let heroOne = new Hero({name: 'will', health: 100, power: 1.2});
+    return heroOne;
+}
+
+function loadHeroTemplate(hero) {
     const heroSource = document.querySelector('#hero-template').innerHTML;
     const template = Handlebars.compile(heroSource);
-     const html = template(hero);
-     /// needs to initiate game screen and remove character choice screen after clicking button
-     /// make classes for html elements to show and hide from screens
-     startScreen.classList.add('off-screen'); /// this move start screen out of the way, 
-     /// need to position start screen over main game screen and reveal game screen when button is cicked
-     setTimeout(() => {
-         gameScreen.classList.remove('hidden');
-         document.querySelector('.game-screen').innerHTML = html;
+    const html = template(hero);
+    document.querySelector('.game-screen').innerHTML = html;
+}
+
+
+
+buttonOne.addEventListener('click', () => {
     /// needs to initiate game screen and remove character choice screen after clicking button
     /// make classes for html elements to show and hide from screens
-    startScreen.classList.add('off-screen'); /// this move start screen out of the way, 
     /// need to position start screen over main game screen and reveal game screen when button is cicked
+    startScreen.classList.add('off-screen'); 
     setTimeout(() => {
-        gameScreen.classList.remove('hidden');
+        generateHeroOne();
+        loadHeroTemplate(generateHeroOne());
+        // console.log(heroOne);
+        /// this moves start screen out of the way
+        gameScreen.classList.remove('hidden')
     }, 450);
-}));
+});
 
 
 // player.generateFood to show food on screen
