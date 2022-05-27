@@ -61,3 +61,7 @@ eatButton.addEventListener('click', () => {
 
 // enemy random move
 const randomMove = enemy.randomMove.bind(enemy);
+
+setTimeout(randomMove, 1000);
+
+
