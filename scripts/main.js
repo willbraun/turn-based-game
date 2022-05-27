@@ -65,3 +65,4 @@ const randomMove = enemy.randomMove.bind(enemy);
 setTimeout(randomMove, 1000);
 
 
+x   
