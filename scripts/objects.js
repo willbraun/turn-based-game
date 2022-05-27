@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 export const food = [
+=======
+export const foods = [
+>>>>>>> c2d11ba (successfully generated a random food)
     {   
         name: 'watermelon',
         nutrition: 10,
@@ -26,7 +30,7 @@ export const food = [
     }
 ];
 
-const heros = [
+export const heros = [
     {
         name: 'kid 1',
         health: 100
@@ -41,7 +45,7 @@ const heros = [
     }
 ]
 
-const enemies = [
+export const enemies = [
     {
         name: 'enemy 1',
         health: 100

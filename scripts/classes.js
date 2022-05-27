@@ -1,3 +1,5 @@
+import { foods } from './objects.js';
+
 export class Character {
     constructor(name, health) {
         this.name = name;
@@ -13,8 +15,8 @@ export class Character {
         this.health += food.nutrition;
     }
 
-    generateFood(foodArray) {
-        this.currentFood = foodArray[Math.floor(Math.random() * foodArray.length)];
+    generateFood() {
+        this.currentFood = foods[Math.floor(Math.random() * foods.length)];
     };
 }
 
@@ -39,9 +41,9 @@ export class Enemy extends Character {
     }
 }
 
-export class Game {
-    constructor(selectedHero, generatedEnemy) {
-        this.selectedHero = selectedHero;
-        this.generatedEnemy = generatedEnemy;
-    }
-}
+// export class Game {
+//     constructor(selectedHero, generatedEnemy) {
+//         this.selectedHero = selectedHero;
+//         this.generatedEnemy = generatedEnemy;
+//     }
+// }

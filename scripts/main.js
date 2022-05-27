@@ -1,5 +1,4 @@
-import { Game, Hero, Enemy } from './classes.js';
-import food from './objects.js';
+import { Hero, Enemy } from './classes.js';
 
 let testHero = new Hero('mario', 100);
 let testEnemy = new Enemy('bowser', 100);
@@ -14,8 +13,12 @@ console.log(testEnemy);
 
 
 
+let hero, enemy;
+// document.querySelector('.hero1button').addEventListener('click', () => {
+//     const hero = new Hero('kid1', 100)
+// });
 const buttonOne = document.querySelector('.select-hero-one');
-const buttonTwo = doucment.querySelector('.select-hero-two');
+const buttonTwo = document.querySelector('.select-hero-two');
 const buttonThree = document.querySelector('.select-hero-three');
 const startScreen = document.querySelector('.opening-screen');
 const attackButton = document.querySelector('.attack-btn');
@@ -37,8 +40,11 @@ buttonOne.addEventListener('click', () => {
 // const game = new Game(hero object, enemy object)
 
 // player.generateFood to show food on screen
+testHero.generateFood();
+console.log(testHero);
 
 // click throw
+attackButton.addEventListener('click', attack(food, enemy));
 
 // click consume
 
