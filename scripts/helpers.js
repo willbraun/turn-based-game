@@ -41,14 +41,15 @@ const setUpEatBtn = hero => {
 export const setUpGame = (hero, enemy) => {
     const audio = document.getElementById('characterSelect');
     // audio.play();
+    // debugger;
+    const startScreen = document.querySelector('.opening-screen');
+    const gameScreen = document.querySelector('.game-screen');
+    loadHeroTemplate(hero);
+    startScreen.classList.add('off-screen');
     setTimeout(() => {
-        loadHeroTemplate(hero);
-        const startScreen = document.querySelector('.opening-screen');
-        startScreen.classList.add('off-screen');
-        const gameScreen = document.querySelector('.game-screen');
-        gameScreen.classList.remove('hidden') 
         setUpAttackBtn(hero, enemy);
         setUpEatBtn(hero);
         hero.generateFood();
-    }, 450);
+        gameScreen.classList.remove('hidden'); 
+    }, 900);
 }
