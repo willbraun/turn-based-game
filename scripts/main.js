@@ -50,5 +50,4 @@ console.log(testHero);
 attackButton.addEventListener('click', attack(food, enemy));
 
 // click consume
-
-
+eatButton.addEventListener('click', eat(food));
