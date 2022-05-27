@@ -21,6 +21,8 @@ const buttonOne = document.querySelector('.select-hero-one');
 const buttonTwo = doucment.querySelector('.select-hero-two');
 const buttonThree = document.querySelector('.select-hero-three');
 const startScreen = document.querySelector('.opening-screen');
+const attackButton = document.querySelector('.attack-btn');
+const eatButton = document.querySelector('.eat-btn');
 
 buttonOne.addEventListener('click', () => {
     hero = new Hero('kid1', 100);

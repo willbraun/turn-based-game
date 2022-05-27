@@ -5,11 +5,11 @@ export class Character {
         this.currentFood = null;
     }
 
-    throw(food, target) {
+    attack(food, target) {
         target.health -= food.damage;
     }
 
-    consume(food) {
+    eat(food) {
         this.health += food.nutrition;
     }
 
@@ -31,10 +31,10 @@ export class Enemy extends Character {
 
     randomMove(food, target) {
         if (Math.random() > 0.5) {
-            this.throw(food, target);
+            this.attack(food, target);
         }
         else {
-            this.consume(food);
+            this.eat(food);
         }
     }
 }
