@@ -46,8 +46,11 @@ buttonOne.addEventListener('click', () => {
 testHero.generateFood();
 
 // click attack
-testHero.attack.call(testHero, testEnemy);
-console.log(testEnemy);
+const attack = testHero.attack.bind(testHero);
+attackButton.addEventListener('click', () => {
+    attack(testEnemy);
+    console.log(testEnemy);
+});
 
 
 // testHero.attack(testHero.currentFood, testEnemy);
@@ -55,13 +58,7 @@ console.log(testEnemy);
 
 
 
-// attackButton.addEventListener('click', attack);
 
-<<<<<<< HEAD
+
 // click consume
 eatButton.addEventListener('click', eat(food));
-=======
-// click eat
-
-
->>>>>>> bbcd9d9 (got attack function working)

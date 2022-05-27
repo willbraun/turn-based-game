@@ -5,9 +5,6 @@ export class Character {
         this.name = name;
         this.health = health;
         this.currentFood = null;
-        // this.attack = this.attack.bind(this);
-        // this.eat = this.eat.bind(this);
-        // this.generateFood = this.generateFood.bind(this);
     }
 
     attack(target) {
