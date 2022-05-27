@@ -1,12 +1,13 @@
 import { hero, enemy, setUpGame } from './helpers.js';
+import {heroes} from './objects.js';
 
 const selectWill = document.querySelector('.select-hero-one');
 const selectMatt = document.querySelector('.select-hero-two');
 const selectLevi = document.querySelector('.select-hero-three');
 
-selectWill.addEventListener('click', () => setUpGame('Will', 120, 1.2));
-selectMatt.addEventListener('click', () => setUpGame('Matt', 90, 1.8));
-selectLevi.addEventListener('click', () => setUpGame('Levi', 180, 0.9));
+selectWill.addEventListener('click', () => setUpGame(heroes[0]));
+selectMatt.addEventListener('click', () => setUpGame(heroes[1]));
+selectLevi.addEventListener('click', () => setUpGame(heroes[2]));
 
 enemy.generateFood();
 const randomMove = enemy.randomMove.bind(enemy);

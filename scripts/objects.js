@@ -48,3 +48,27 @@ export const enemies = [
         powerLevel: 1.1
     }
 ]
+
+export const heroes = [
+    {
+        name: 'Will',
+        health: 120,
+        powerLevel: 1.2,
+        backgroundImg: './background-images/637660120653570000.jpeg',
+        heroImg: '😎'
+    },
+    {
+        name: 'Matt',
+        health: 90,
+        powerLevel: 1.8,
+        backgroundImg: './background-images/Cafe1-Copy_1.jpeg',
+        heroImg: '🥸'
+    },
+    {
+        name: 'Levi',
+        health: 180,
+        powerLevel: 0.9,
+        backgroundImg: './background-images/JHS_3649-HDR-scaled.jpeg',
+        heroImg: '🤠'
+    }
+]

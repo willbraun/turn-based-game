@@ -42,7 +42,7 @@ const setUpEatBtn = () => {
 export const setUpGame = (name, health, powerLevel) => {
     hero = generateHero(name, health, powerLevel);
     const audio = document.getElementById('characterSelect');
-    audio.play();
+    // audio.play();
     setTimeout(() => {
         loadHeroTemplate(hero);
         const startScreen = document.querySelector('.opening-screen');
