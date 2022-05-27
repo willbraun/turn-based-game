@@ -9,9 +9,17 @@ let enemy = new Enemy(getRandom(enemies));
 
 // prompt user to select hero (randomly selected now for testing)
 
+<<<<<<< HEAD
 // let hero;
 // let testHero = new Hero(getRandom(heros));
 // console.log(testHero);
+=======
+let hero;
+let testHero = new Hero({name: 'kid1', health: 100});
+
+/// HANDLEBARS TEMPLATE
+
+>>>>>>> e60c166 (need to add functions to buttons on game start)
 
 const buttonOne = document.querySelector('.select-hero-one');
 const buttonTwo = document.querySelector('.select-hero-two');
@@ -50,15 +58,23 @@ buttonOne.addEventListener('click', () => {
         /// this moves start screen out of the way
         gameScreen.classList.remove('hidden')
     }, 450);
+<<<<<<< HEAD
 });
+=======
+
+
+    
+})}
+);
+>>>>>>> e60c166 (need to add functions to buttons on game start)
 
 
 // player.generateFood to show food on screen
-testHero.generateFood();
+testHero.generateFood(); // must add into function that creates character
 
 // click attack
-console.log(enemy);
 const attack = testHero.attack.bind(testHero);
+console.log(testHero);
 attackButton.addEventListener('click', () => {
     attack(enemy);
     console.log(enemy);
@@ -66,7 +82,7 @@ attackButton.addEventListener('click', () => {
 
 
 // click consume
-const eat = testHero.eat.bind(testHero)
+const eat = hero.eat.bind(testHero)
 eatButton.addEventListener('click', () => {
     eat();
     console.log(testHero);
