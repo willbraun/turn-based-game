@@ -1,16 +1,13 @@
 import { Hero, Enemy } from './classes.js';
-import { enemies } from './objects.js';
 
 export const getRandom = objArray => objArray[Math.floor(Math.random() * objArray.length)];
 
-export let hero;
-export let enemy = new Enemy(getRandom(enemies));
-
-
 const generateHero = (name, health, powerLevel) => {
-    hero = new Hero({name: name, health: health, powerLevel: powerLevel});
-    console.log(hero);
-    return hero;
+    return new Hero({name: name, health: health, powerLevel: powerLevel});
+}
+
+const generateEnemy = () => {
+    return new Enemy(getRandom(enemies));
 }
 
 const loadHeroTemplate = hero => {
@@ -20,17 +17,18 @@ const loadHeroTemplate = hero => {
     document.querySelector('.game-screen').innerHTML = html;
 }
 
-const setUpAttackBtn = () => {
+const setUpAttackBtn = hero => {
     const attackButton = document.querySelector('.attack-btn');
     const attack = hero.attack.bind(hero);
     console.log(hero);
+    let enemy = generateEnemy();
     attackButton.addEventListener('click', () => {
         attack(enemy);
         console.log(enemy);
     });
 }
 
-const setUpEatBtn = () => {
+const setUpEatBtn = hero => {
     const eatButton = document.querySelector('.eat-btn');
     const eat = hero.eat.bind(hero)
     eatButton.addEventListener('click', () => {
@@ -40,17 +38,17 @@ const setUpEatBtn = () => {
 }
 
 export const setUpGame = (name, health, powerLevel) => {
-    hero = generateHero(name, health, powerLevel);
+    let thisHero = generateHero(name, health, powerLevel);
     const audio = document.getElementById('characterSelect');
     // audio.play();
     setTimeout(() => {
-        loadHeroTemplate(hero);
+        loadHeroTemplate(thisHero);
         const startScreen = document.querySelector('.opening-screen');
         startScreen.classList.add('off-screen');
         const gameScreen = document.querySelector('.game-screen');
         gameScreen.classList.remove('hidden') 
-        setUpAttackBtn();
-        setUpEatBtn();
-        hero.generateFood();
+        setUpAttackBtn(thisHero);
+        setUpEatBtn(thisHero);
+        thisHero.generateFood();
     }, 450);
 }
