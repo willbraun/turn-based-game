@@ -31,21 +31,6 @@ export const foods = [
     }
 ];
 
-// export const heros = [
-//     {
-//         name: 'kid 1',
-//         health: 100
-//     },
-//     {
-//         name: 'kid 2',
-//         health: 100
-//     },
-//     {
-//         name: 'kid 3',
-//         health: 100
-//     }
-// ]
-
 export const enemies = [
     {
         name: 'enemy 1',
