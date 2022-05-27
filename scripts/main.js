@@ -43,8 +43,8 @@ console.log(testHero.currentFood);
 // click attack
 const attack = testHero.attack.bind(testHero);
 attackButton.addEventListener('click', () => {
-    attack(testEnemy);
-    console.log(testEnemy);
+    attack(enemy);
+    console.log(enemy);
 });
 
 
@@ -54,3 +54,6 @@ eatButton.addEventListener('click', () => {
     eat(foods);
     console.log(foods);
 });
+
+// enemy random move
+const randomMove = enemy.randomMove.bind(enemy);
