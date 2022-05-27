@@ -52,7 +52,7 @@ attackButton.addEventListener('click', () => {
 const eat = testHero.eat.bind(testHero)
 eatButton.addEventListener('click', () => {
     eat(foods);
-    console.log(foods);
+    console.log(testHero);
 });
 
 // enemy random move
