@@ -1,5 +1,5 @@
 import { Hero, Enemy } from './classes.js';
-import { heros, enemies } from './objects.js';
+import { heros, enemies, foods } from './objects.js';
 import { getRandom } from './helpers.js';
 
 
@@ -34,7 +34,7 @@ const eatButton = document.querySelector('.eat-btn');
 buttonOne.addEventListener('click', () => {
     hero = new Hero('kid1', 100);
     enemy = new Enemy('bully1', 100);
-    // needs to initiate game screen and remove character choice scrren after clicking button
+    // needs to initiate game screen and remove character choice screen after clicking button
     //make classes for html elements to show and hide from screens
     
 })
@@ -53,5 +53,8 @@ attackButton.addEventListener('click', () => {
 
 
 // click consume
-eatButton.addEventListener('click', eat(food));
-
+const eat = testHero.eat.bind(testHero)
+eatButton.addEventListener('click', () => {
+    eat(foods);
+    console.log(foods);
+});
