@@ -1,4 +1,5 @@
 import { Hero, Enemy } from './classes.js';
+import { enemies } from './objects.js';
 
 export const getRandom = objArray => objArray[Math.floor(Math.random() * objArray.length)];
 
@@ -20,7 +21,6 @@ const loadHeroTemplate = hero => {
 const setUpAttackBtn = hero => {
     const attackButton = document.querySelector('.attack-btn');
     const attack = hero.attack.bind(hero);
-    console.log(hero);
     let enemy = generateEnemy();
     attackButton.addEventListener('click', () => {
         attack(enemy);
@@ -37,7 +37,7 @@ const setUpEatBtn = hero => {
     });
 }
 
-export const setUpGame = (name, health, powerLevel) => {
+export const setUpGame = ({name, health, powerLevel}) => {
     let thisHero = generateHero(name, health, powerLevel);
     const audio = document.getElementById('characterSelect');
     // audio.play();
