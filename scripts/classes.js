@@ -5,6 +5,7 @@ export class Character {
     constructor({name, health, powerLevel}) {
         this.name = name;
         this.health = health;
+        this.maxHealth = health;
         this.currentFood = null;
         this.powerLevel = powerLevel;
     }
@@ -14,7 +15,13 @@ export class Character {
     }
 
     eat() {
-        this.health += this.currentFood.nutrition;
+        let newHealth = this.health + this.currentFood.nutrition;
+        if (newHealth > this.maxHealth) {
+            this.health = this.maxHealth;
+        }
+        else {
+            this.health = newHealth;
+        }
     }
 
     generateFood() {
@@ -23,14 +30,14 @@ export class Character {
 }
 
 export class Hero extends Character {
-    constructor(name, health, currentFood) {
-        super(name, health, currentFood);
+    constructor(name, health, powerLevel) {
+        super(name, health, powerLevel);
     }
 }
 
 export class Enemy extends Character {
-    constructor(name, health, currentFood) {
-        super(name, health, currentFood);
+    constructor(name, health, powerLevel) {
+        super(name, health, powerLevel);
     }
 
     randomMove(target) {

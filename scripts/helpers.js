@@ -21,7 +21,6 @@ const loadHeroTemplate = hero => {
 const setUpAttackBtn = (hero, enemy) => {
     const attackButton = document.querySelector('.attack-btn');
     const attack = hero.attack.bind(hero);
-    // let enemy = generateEnemy();
     attackButton.addEventListener('click', () => {
         attack(enemy);
         console.log(enemy);
@@ -40,7 +39,6 @@ const setUpEatBtn = hero => {
 }
 
 export const setUpGame = (hero, enemy) => {
-    // let thisHero = generateHero(name, health, powerLevel);
     const audio = document.getElementById('characterSelect');
     // audio.play();
     setTimeout(() => {

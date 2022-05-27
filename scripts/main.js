@@ -11,7 +11,6 @@ const selectLevi = document.querySelector('.select-hero-three');
 
 selectWill.addEventListener('click', () => {
     gameHero = generateHero(heroes[0]);
-    console.log(gameHero);
     setUpGame(gameHero, gameEnemy);
 });
 selectMatt.addEventListener('click', () => {
