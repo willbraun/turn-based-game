@@ -36,4 +36,16 @@ body {
   border-radius: 50%;
 }
 
+.hero-stats {
+  padding: 1rem;
+  margin: 1rem;
+  box-shadow: -4px 4px 5px 0px rgba(107, 104, 105, 0.48);
+  background-color: #E87B7D;
+  border-radius: 20px;
+}
+.hero-stats ul {
+  list-style: none;
+  padding: 0;
+}
+
 /*# sourceMappingURL=styles.css.map */

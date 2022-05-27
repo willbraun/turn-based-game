@@ -13,9 +13,9 @@ let hero;
 // let testHero = new Hero(getRandom(heros));
 // console.log(testHero);
 
-const buttonOne = document.querySelector('.select-hero-one');
-const buttonTwo = document.querySelector('.select-hero-two');
-const buttonThree = document.querySelector('.select-hero-three');
+const selectWill = document.querySelector('.select-hero-one');
+const selectMatt = document.querySelector('.select-hero-two');
+const selectLevi = document.querySelector('.select-hero-three');
 const startScreen = document.querySelector('.opening-screen');
 const gameScreen = document.querySelector('.game-screen');
 
@@ -23,9 +23,16 @@ const gameScreen = document.querySelector('.game-screen');
 
 /// generate hero function 
 // let hero;
+<<<<<<< HEAD
 function generateHeroOne() {
     let heroOne = new Hero({name: 'will', health: 100, powerLevel: 1.2});
     return heroOne;
+=======
+function generateHero(name, health, powerLevel) {
+    hero = new Hero({name: name, health: health, powerLevel: powerLevel});
+    console.log(hero);
+    return hero;
+>>>>>>> 7c50d56 (refactors select button listeners with unique hero choices)
 }
 
 function loadHeroTemplate(hero) {
@@ -37,12 +44,13 @@ function loadHeroTemplate(hero) {
 
 
 
-buttonOne.addEventListener('click', () => {
+selectWill.addEventListener('click', () => {
     /// needs to initiate game screen and remove character choice screen after clicking button
     /// make classes for html elements to show and hide from screens
     /// need to position start screen over main game screen and reveal game screen when button is cicked
     startScreen.classList.add('off-screen'); 
     setTimeout(() => {
+<<<<<<< HEAD
         hero = generateHeroOne();
         hero.generateFood();
         loadHeroTemplate(generateHeroOne());
@@ -63,10 +71,46 @@ buttonOne.addEventListener('click', () => {
         });
 
         // console.log(heroOne);
+=======
+        loadHeroTemplate(generateHero('will', 120, 1.2));
+>>>>>>> 7c50d56 (refactors select button listeners with unique hero choices)
         /// this moves start screen out of the way
         gameScreen.classList.remove('hidden')
     }, 450);
 
+<<<<<<< HEAD
+=======
+
+selectMatt.addEventListener('click', () => {
+    startScreen.classList.add('off-screen'); 
+    setTimeout(() => {
+        loadHeroTemplate(generateHero('matthew', 90, 1.8));
+
+        gameScreen.classList.remove('hidden')
+    }, 450);
+});
+
+
+selectLevi.addEventListener('click', () => {
+    startScreen.classList.add('off-screen'); 
+    setTimeout(() => {
+        loadHeroTemplate(generateHero('levi', 180, 0.9));
+
+        gameScreen.classList.remove('hidden')
+    }, 450);
+});
+
+
+// player.generateFood to show food on screen
+testHero.generateFood(); // must add into function that creates character
+
+// click attack
+const attack = testHero.attack.bind(testHero);
+console.log(testHero);
+attackButton.addEventListener('click', () => {
+    attack(enemy);
+    console.log(enemy);
+>>>>>>> 7c50d56 (refactors select button listeners with unique hero choices)
 });
 
 
