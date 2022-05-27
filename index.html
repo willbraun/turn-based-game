@@ -46,31 +46,26 @@
         </div>
 
         <div class="game-screen hidden d-flex justify-content-center align-items-center w-100 h-25">
-            <div class="row w-50">
-                <div class="food-display col d-flex justify-content-end">
-                    <span class="food-item">🍰</span>
-                </div>
-            </div>
-        
-            <div class="hero-options row w-100 justify-content-end">
-                <button class="attack-btn btn btn-danger col-6 m-3">Attack!</button>
-                <button class="eat-btn btn btn-success col-6 m-3">Eat!</button>
-            </div>
-
-            <div class="hero-food"></div>
-            <div class="enemy-food"></div>
-
+       
         </div>
-
-
-
-
-
+        
+        
+        
+        
+        
         <script id="hero-template" type="text/x-handlebars-template">
             
-                <div class="hero-wrapper">
-                    <div class="hero-health"><span>{{this.health}}</span></div>
-                    <div class="hero-entity">{{this.name}}</div>
+                <div class="hero-health"><span>{{this.health}}</span></div>
+                <div class="hero-entity">{{this.name}}</div>
+                <div class="row w-50">
+                    <div class="food-display col d-flex justify-content-end">
+                        <span class="food-item">{{this.currentFood}}</span>
+                    </div>
+                </div>
+            
+                <div class="hero-options row w-100 justify-content-end">
+                    <button class="attack-btn btn btn-danger col-6 m-3">Attack!</button>
+                    <button class="eat-btn btn btn-success col-6 m-3">Eat!</button>
                 </div>
         </script>
 

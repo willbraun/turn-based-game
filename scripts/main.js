@@ -15,9 +15,9 @@ let testHero = new Hero(getRandom(heros));
 console.log(testHero);
 
 
-// document.querySelector('.hero1button').addEventListener('click', () => {
-//     const hero = new Hero('kid1', 100)
-// });
+/// HANDLEBARS TEMPLATE
+
+
 const buttonOne = document.querySelector('.select-hero-one');
 const buttonTwo = document.querySelector('.select-hero-two');
 const buttonThree = document.querySelector('.select-hero-three');
@@ -30,12 +30,16 @@ const eatButton = document.querySelector('.eat-btn');
 buttonOne.addEventListener('click', () => {
     hero = new Hero('kid1', 100);
     enemy = new Enemy('bully1', 100);
-    /// needs to initiate game screen and remove character choice screen after clicking button
-    /// make classes for html elements to show and hide from screens
-    startScreen.classList.add('off-screen'); /// this move start screen out of the way, 
-    /// need to position start screen over main game screen and reveal game screen when button is cicked
-    setTimeout(() => {
-        gameScreen.classList.remove('hidden');
+    const heroSource = document.querySelector('#hero-template').innerHTML;
+    const template = Handlebars.compile(heroSource);
+     const html = template(hero);
+     /// needs to initiate game screen and remove character choice screen after clicking button
+     /// make classes for html elements to show and hide from screens
+     startScreen.classList.add('off-screen'); /// this move start screen out of the way, 
+     /// need to position start screen over main game screen and reveal game screen when button is cicked
+     setTimeout(() => {
+         gameScreen.classList.remove('hidden');
+         document.querySelector('.game-screen').innerHTML = html;
     }, 450);
 })
 
