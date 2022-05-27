@@ -5,7 +5,6 @@ import { getRandom } from './helpers.js';
 
 // generate random enemy
 let enemy = new Enemy(getRandom(enemies));
-let hero;
 
 // prompt user to select hero (randomly selected now for testing)
 
@@ -22,7 +21,7 @@ const startScreen = document.querySelector('.opening-screen');
 const gameScreen = document.querySelector('.game-screen');
 const attackButton = document.querySelector('.attack-btn');
 const eatButton = document.querySelector('.eat-btn');
-const audio = document.getElementById('characterSelect')
+const audio = document.getElementById('characterSelect');
 
 /// generate hero function 
 // let hero;
@@ -49,7 +48,28 @@ buttonOne.addEventListener('click', () => {
     /// make classes for html elements to show and hide from screens
     /// need to position start screen over main game screen and reveal game screen when button is cicked
     startScreen.classList.add('off-screen'); 
+    const attackButton = document.querySelector('.attack-btn');
+        const eatButton = document.querySelector('.eat-btn');
     setTimeout(() => {
+        hero = generateHeroOne();
+        hero.generateFood();
+        loadHeroTemplate(generateHeroOne());
+        
+
+        const attack = hero.attack.bind(hero);
+        console.log(hero);
+        attackButton.addEventListener('click', () => {
+            attack(enemy);
+            console.log(enemy);
+        });
+
+        const eat = hero.eat.bind(hero)
+        eatButton.addEventListener('click', () => {
+            eat();
+            console.log(hero);
+        });
+
+        // console.log(heroOne);
         loadHeroTemplate(generateHero('will', 120, 1.2));
         /// this moves start screen out of the way
         gameScreen.classList.remove('hidden')
