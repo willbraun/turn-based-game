@@ -32,14 +32,12 @@ export class Enemy extends Character {
         super(name, health, currentFood);
     }
 
-    randomMove(food, target) {
+    randomMove(target) {
         if (Math.random() > 0.5) {
             this.attack(target);
-            console.log(target);
         }
         else {
-            this.eat(food);
-            console.log(this);
+            this.eat();
         }
     }
 }
