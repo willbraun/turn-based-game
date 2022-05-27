@@ -1,4 +1,4 @@
-const food = [
+export const food = [
     {   
         name: 'watermelon',
         nutrition: 10,

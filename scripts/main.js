@@ -1,4 +1,5 @@
 import { Game, Hero, Enemy } from './classes.js';
+import food from './objects.js';
 
 let testHero = new Hero('mario', 100);
 let testEnemy = new Enemy('bowser', 100);
@@ -13,16 +14,18 @@ console.log(testEnemy);
 
 
 
-let hero, enemy;
-document.querySelector('.hero1button').addEventListener('click', () => {
-    const hero = new Hero('kid1', 100)
-});
 const buttonOne = document.querySelector('.select-hero-one');
 const buttonTwo = doucment.querySelector('.select-hero-two');
 const buttonThree = document.querySelector('.select-hero-three');
 const startScreen = document.querySelector('.opening-screen');
 const attackButton = document.querySelector('.attack-btn');
 const eatButton = document.querySelector('.eat-btn');
+let hero, enemy;
+
+function getRandomFoodItem() {
+    return food[Math.floor(Math.random() * 5)];
+}
+
 
 buttonOne.addEventListener('click', () => {
     hero = new Hero('kid1', 100);
