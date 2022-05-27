@@ -27,8 +27,6 @@ const eatButton = document.querySelector('.eat-btn');
 
 buttonOne.addEventListener('click', () => {
     hero = new Hero('kid1', 100);
-<<<<<<< HEAD
-    enemy = new Enemy('bully1', 100);
     const heroSource = document.querySelector('#hero-template').innerHTML;
     const template = Handlebars.compile(heroSource);
      const html = template(hero);
@@ -39,14 +37,12 @@ buttonOne.addEventListener('click', () => {
      setTimeout(() => {
          gameScreen.classList.remove('hidden');
          document.querySelector('.game-screen').innerHTML = html;
-=======
     /// needs to initiate game screen and remove character choice screen after clicking button
     /// make classes for html elements to show and hide from screens
     startScreen.classList.add('off-screen'); /// this move start screen out of the way, 
     /// need to position start screen over main game screen and reveal game screen when button is cicked
     setTimeout(() => {
         gameScreen.classList.remove('hidden');
->>>>>>> a93dc2c (working on game actions)
     }, 450);
 })
 
