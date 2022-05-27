@@ -3,11 +3,11 @@ import { enemies } from './objects.js';
 
 export const getRandom = objArray => objArray[Math.floor(Math.random() * objArray.length)];
 
-const generateHero = (name, health, powerLevel) => {
+export const generateHero = ({name, health, powerLevel}) => {
     return new Hero({name: name, health: health, powerLevel: powerLevel});
 }
 
-const generateEnemy = () => {
+export const generateEnemy = () => {
     return new Enemy(getRandom(enemies));
 }
 
@@ -18,13 +18,14 @@ const loadHeroTemplate = hero => {
     document.querySelector('.game-screen').innerHTML = html;
 }
 
-const setUpAttackBtn = hero => {
+const setUpAttackBtn = (hero, enemy) => {
     const attackButton = document.querySelector('.attack-btn');
     const attack = hero.attack.bind(hero);
-    let enemy = generateEnemy();
+    // let enemy = generateEnemy();
     attackButton.addEventListener('click', () => {
         attack(enemy);
         console.log(enemy);
+        hero.generateFood();
     });
 }
 
@@ -34,21 +35,22 @@ const setUpEatBtn = hero => {
     eatButton.addEventListener('click', () => {
         eat();
         console.log(hero);
+        hero.generateFood();
     });
 }
 
-export const setUpGame = ({name, health, powerLevel}) => {
-    let thisHero = generateHero(name, health, powerLevel);
+export const setUpGame = (hero, enemy) => {
+    // let thisHero = generateHero(name, health, powerLevel);
     const audio = document.getElementById('characterSelect');
     // audio.play();
     setTimeout(() => {
-        loadHeroTemplate(thisHero);
+        loadHeroTemplate(hero);
         const startScreen = document.querySelector('.opening-screen');
         startScreen.classList.add('off-screen');
         const gameScreen = document.querySelector('.game-screen');
         gameScreen.classList.remove('hidden') 
-        setUpAttackBtn(thisHero);
-        setUpEatBtn(thisHero);
-        thisHero.generateFood();
+        setUpAttackBtn(hero, enemy);
+        setUpEatBtn(hero);
+        hero.generateFood();
     }, 450);
 }
