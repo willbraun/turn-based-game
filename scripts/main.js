@@ -33,6 +33,9 @@ function getRandomFoodItem() {
 buttonOne.addEventListener('click', () => {
     hero = new Hero('kid1', 100);
     enemy = new Enemy('bully1', 100);
+    // needs to initiate game screen and remove character choice scrren after clicking button
+    //make classes for html elements to show and hide from screens
+    
 })
 
 
