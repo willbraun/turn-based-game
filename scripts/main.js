@@ -44,7 +44,7 @@ buttonOne.addEventListener('click', () => {
     setTimeout(() => {
         gameScreen.classList.remove('hidden');
     }, 450);
-})
+}));
 
 
 // player.generateFood to show food on screen
