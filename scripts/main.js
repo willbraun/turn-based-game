@@ -1,19 +1,19 @@
 import { Hero, Enemy } from './classes.js';
-
-let testHero = new Hero('mario', 100);
-let testEnemy = new Enemy('bowser', 100);
-
-
-// prompt user to select hero
+import { heros, enemies } from './objects.js';
+import { getRandom } from './helpers.js';
 
 
+// generate random enemy
+let enemy = new Enemy(getRandom(enemies));
+console.log(enemy);
 
-console.log(testHero);
-console.log(testEnemy);
+
+// prompt user to select hero (randomly selected now for testing)
+
+let hero;
+let testHero = new Hero(getRandom(heros));
 
 
-
-let hero, enemy;
 // document.querySelector('.hero1button').addEventListener('click', () => {
 //     const hero = new Hero('kid1', 100)
 // });
@@ -39,11 +39,9 @@ buttonOne.addEventListener('click', () => {
 })
 
 
-// autogenerate enemy randomly
-// const game = new Game(hero object, enemy object)
-
 // player.generateFood to show food on screen
 testHero.generateFood();
+console.log(testHero.currentFood);
 
 // click attack
 const attack = testHero.attack.bind(testHero);
@@ -51,13 +49,6 @@ attackButton.addEventListener('click', () => {
     attack(testEnemy);
     console.log(testEnemy);
 });
-
-
-// testHero.attack(testHero.currentFood, testEnemy);
-// 
-
-
-
 
 
 // click consume

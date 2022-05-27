@@ -1,7 +1,8 @@
 import { foods } from './objects.js';
+import { getRandom } from './helpers.js';
 
 export class Character {
-    constructor(name, health) {
+    constructor({name, health}) {
         this.name = name;
         this.health = health;
         this.currentFood = null;
@@ -16,7 +17,7 @@ export class Character {
     }
 
     generateFood() {
-        this.currentFood = foods[Math.floor(Math.random() * foods.length)];
+        this.currentFood = getRandom(foods);
     };
 }
 

@@ -1,0 +1,1 @@
+export const getRandom = objArray => objArray[Math.floor(Math.random() * objArray.length)];
