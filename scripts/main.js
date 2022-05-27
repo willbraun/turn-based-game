@@ -1,8 +1,4 @@
-import { Enemy } from './classes.js';
-import { enemies } from './objects.js';
-import { hero, getRandom, setUpGame } from './helpers.js';
-
-let enemy = new Enemy(getRandom(enemies));
+import { hero, enemy, setUpGame } from './helpers.js';
 
 const selectWill = document.querySelector('.select-hero-one');
 const selectMatt = document.querySelector('.select-hero-two');

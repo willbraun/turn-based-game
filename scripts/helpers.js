@@ -1,8 +1,11 @@
-import { Hero } from './classes.js';
-
-export let hero;
+import { Hero, Enemy } from './classes.js';
+import { enemies } from './objects.js';
 
 export const getRandom = objArray => objArray[Math.floor(Math.random() * objArray.length)];
+
+export let hero;
+export let enemy = new Enemy(getRandom(enemies));
+
 
 const generateHero = (name, health, powerLevel) => {
     hero = new Hero({name: name, health: health, powerLevel: powerLevel});
