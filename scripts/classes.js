@@ -2,12 +2,14 @@ import { foods } from './objects.js';
 import { getRandom } from './helpers.js';
 
 export class Character {
-    constructor({name, health, powerLevel}) {
+    constructor({name, health, powerLevel, faceImg}) {
         this.name = name;
         this.health = health;
         this.maxHealth = health;
         this.currentFood = null;
         this.powerLevel = powerLevel;
+        this.faceImg = faceImg;
+
     }
 
     attack(target) {
@@ -39,12 +41,12 @@ export class Character {
     gameOver() {
         let title = "";
         if (this instanceof Hero) {
-            title = `You win!`;
+            title = `🏆🏆🏆   You win!   🏆🏆🏆`;
         } 
         else {
             title = `Game over... ${this.name} wins`;
         }
-        document.querySelectorAll('.game-over img').forEach(img => img.src = `./files/${this.faceImg}`);
+        document.querySelectorAll('.game-over img').forEach(img => img.src = `../files/${this.faceImg}`);
         
         document.querySelector('.game-over .title').textContent = title;
         document.querySelector('.game-over .message').textContent = `Final attack: ${this.currentFood.icon}`

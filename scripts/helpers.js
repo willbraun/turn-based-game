@@ -3,8 +3,8 @@ import { enemies } from './objects.js';
 
 export const getRandom = objArray => objArray[Math.floor(Math.random() * objArray.length)];
 
-export const generateHero = ({name, health, powerLevel}) => {
-    return new Hero({name: name, health: health, powerLevel: powerLevel});
+export const generateHero = ({name, health, powerLevel, faceImg}) => {
+    return new Hero({name: name, health: health, powerLevel: powerLevel, faceImg: faceImg});
 }
 
 export const generateEnemy = () => {

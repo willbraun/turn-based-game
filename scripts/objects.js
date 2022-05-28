@@ -54,24 +54,24 @@ export const heroes = [
         name: 'Will',
         health: 120,
         powerLevel: 1.2,
-        faceImgName: '8-Bit-Will.png',
-        backgroundImg: './background-images/637660120653570000.jpeg',
+        faceImg: '8-Bit-Will.png',
+        backgroundImg: '637660120653570000.jpeg', // From Will - I removed ./background-images/ so we can reference these from anywhere
         heroImg: '😎'   
     },
     {
         name: 'Matt',
         health: 90,
         powerLevel: 1.8,
-        faceImgName: '8-Bit-Matthew.png',
-        backgroundImg: './background-images/Cafe1-Copy_1.jpeg',
+        faceImg: '8-Bit-Matthew.png',
+        backgroundImg: 'Cafe1-Copy_1.jpeg',
         heroImg: '🥸'
     },
     {
         name: 'Levi',
         health: 180,
         powerLevel: 0.9,
-        faceImgName: '8-Bit-Levi.png',
-        backgroundImg: './background-images/JHS_3649-HDR-scaled.jpeg',
+        faceImg: '8-Bit-Levi.png',
+        backgroundImg: 'JHS_3649-HDR-scaled.jpeg',
         heroImg: '🤠'
     }
 ]

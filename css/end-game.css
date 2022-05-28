@@ -3,26 +3,30 @@
   position: absolute;
   top: 0;
   right: 0;
-  height: 50%;
+  min-height: fit-content;
   width: 50%;
   background: rgb(198, 255, 255);
   border-radius: 20px;
   box-shadow: -4px 4px 5px 0px rgba(107, 104, 105, 0.48);
-  display: flex;
-  justify-content: space-around;
 }
-.game-over * {
-  margin: 20px;
+.game-over .title {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 20px;
+}
+.game-over .modal-body {
+  display: flex;
+  justify-content: space-between;
 }
 .game-over .content {
+  margin: 20px auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
-.title {
-  font-size: 3rem;
+.game-over img {
+  width: 30%;
 }
 
 .message {
