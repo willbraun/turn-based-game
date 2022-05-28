@@ -55,7 +55,7 @@ export const heroes = [
         health: 120,
         powerLevel: 1.2,
         backgroundImg: './background-images/637660120653570000.jpeg',
-        heroImg: '😎'
+        heroImg: '😎'   
     },
     {
         name: 'Matt',
