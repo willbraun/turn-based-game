@@ -14,7 +14,7 @@ export class Character {
         const newHealth = target.health - (this.currentFood.damage * this.powerLevel);
         if (newHealth < 0) {
             target.health = 0;
-            // this.gameOver();
+            this.gameOver();
         }
         else {
             target.health = newHealth;
@@ -37,7 +37,11 @@ export class Character {
     };
 
     gameOver() {
-
+        document.querySelector('.game-over > .title').textContent = `Test wins`;
+        document.querySelector('.game-over > .message').textContent = `Final attack: ${this.currentFood.icon}`
+        
+        document.querySelector('.game-over').style.visibility = 'visible';
+        console.log('game over');
     }
 }
 

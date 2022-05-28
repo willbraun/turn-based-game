@@ -13,5 +13,10 @@ const selectLevi = document.querySelector('.select-hero-three');
     button.addEventListener('click', () => {
         gameHero = generateHero(heroes[i]);
         setUpGame(gameHero, gameEnemy);
+
+        // testing
+        const win = gameHero.gameOver.bind(gameHero);
+        document.querySelector('.TEST-BUTTON').addEventListener('click',win);
     });
 });
+
