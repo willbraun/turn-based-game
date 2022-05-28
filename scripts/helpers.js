@@ -48,11 +48,14 @@ const setUpAttackBtn = (hero, enemy) => {
     attackButton.addEventListener('click', () => {
         attack(enemy);
         updateHealthBar(enemy);
-        hero.generateFood();
-        console.log(enemy);
-
+        
+        if (enemy.health > 0) {
+            hero.generateFood();
+            enemyTurn(hero, enemy);
+        }
+        
         disableButtons();
-        enemyTurn(hero, enemy);
+        console.log(enemy);
     });
 }
 
@@ -63,10 +66,10 @@ const setUpEatBtn = (hero, enemy) => {
         eat();
         updateHealthBar(hero);
         hero.generateFood();
-        console.log(hero);
+        enemyTurn(hero, enemy);
 
         disableButtons();
-        enemyTurn(hero, enemy);
+        console.log(hero);
     });
 }
 

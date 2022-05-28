@@ -40,7 +40,7 @@ export class Character {
 
     gameOver() {
         disableButtons();
-        
+
         let title = "";
         if (this instanceof Hero) {
             title = `🏆🏆🏆   You win!   🏆🏆🏆`;
