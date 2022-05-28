@@ -30,6 +30,7 @@ body {
   border-radius: 10px;
   font-size: 3rem;
   text-shadow: -1px 0px 1px #555;
+  
 }
 .opening-screen button {
   padding: 0.5rem 1rem;
@@ -108,5 +109,12 @@ body {
   text-align: center;
   color: white;
 }
+
+img {    
+  width:  150px;
+  height: 150px;
+}
+
+
 
 /*# sourceMappingURL=styles.css.map */
