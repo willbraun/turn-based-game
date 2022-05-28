@@ -24,7 +24,7 @@ const loadHeroTemplate = hero => {
     document.querySelector('.game-screen').innerHTML = html;
 }
 
-const disableButtons = () => {
+export const disableButtons = () => {
     document.querySelectorAll('.attack-btn, .eat-btn').forEach(button => button.disabled = true);
 }
 

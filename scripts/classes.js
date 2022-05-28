@@ -1,5 +1,5 @@
 import { foods } from './objects.js';
-import { getRandom } from './helpers.js';
+import { getRandom, disableButtons } from './helpers.js';
 
 export class Character {
     constructor({name, health, powerLevel, faceImg}) {
@@ -39,6 +39,8 @@ export class Character {
     };
 
     gameOver() {
+        disableButtons();
+        
         let title = "";
         if (this instanceof Hero) {
             title = `🏆🏆🏆   You win!   🏆🏆🏆`;
@@ -46,25 +48,26 @@ export class Character {
         else {
             title = `Game over... ${this.name} wins`;
         }
-        document.querySelectorAll('.game-over img').forEach(img => img.src = `../files/${this.faceImg}`);
+
         
         document.querySelector('.game-over .title').textContent = title;
         document.querySelector('.game-over .message').textContent = `Final attack: ${this.currentFood.icon}`
-        
+        document.querySelectorAll('.game-over img').forEach(img => img.src = `../files/${this.faceImg}`);
+
         document.querySelector('.game-over').style.visibility = 'visible';
         console.log('game over');
     }
 }
 
 export class Hero extends Character {
-    constructor(name, health, powerLevel) {
-        super(name, health, powerLevel);
+    constructor(name, health, powerLevel, faceImg) {
+        super(name, health, powerLevel, faceImg);
     }
 }
 
 export class Enemy extends Character {
-    constructor(name, health, powerLevel) {
-        super(name, health, powerLevel);
+    constructor(name, health, powerLevel, faceImg) {
+        super(name, health, powerLevel, faceImg);
     }
 
     randomMove(target) {
