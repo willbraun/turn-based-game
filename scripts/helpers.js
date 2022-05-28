@@ -24,25 +24,37 @@ const loadHeroTemplate = hero => {
     document.querySelector('.game-screen').innerHTML = html;
 }
 
+const enemyTurn = (hero, enemy) => {
+    setTimeout(() => {
+        enemy.generateFood();
+        enemy.randomMove.call(enemy, hero);
+        console.log(hero, enemy);
+    }, 5000);
+}
+
 const setUpAttackBtn = (hero, enemy) => {
     const attackButton = document.querySelector('.attack-btn');
     const attack = hero.attack.bind(hero);
     attackButton.addEventListener('click', () => {
         attack(enemy);
         updateHealthBar(enemy);
-        console.log(enemy);
         hero.generateFood();
+        console.log(enemy);
+
+        enemyTurn(hero, enemy);
     });
 }
 
-const setUpEatBtn = hero => {
+const setUpEatBtn = (hero, enemy) => {
     const eatButton = document.querySelector('.eat-btn');
     const eat = hero.eat.bind(hero)
     eatButton.addEventListener('click', () => {
         eat();
         updateHealthBar(hero);
-        console.log(hero);
         hero.generateFood();
+        console.log(hero);
+
+        enemyTurn(hero, enemy);
     });
 }
 
@@ -55,7 +67,7 @@ export const setUpGame = (hero, enemy) => {
     startScreen.classList.add('off-screen');
     setTimeout(() => {
         setUpAttackBtn(hero, enemy);
-        setUpEatBtn(hero);
+        setUpEatBtn(hero, enemy);
         hero.generateFood();
         gameScreen.classList.remove('hidden'); 
     }, 900);

@@ -15,13 +15,3 @@ const selectLevi = document.querySelector('.select-hero-three');
         setUpGame(gameHero, gameEnemy);
     });
 });
-
-// testing
-// let testHero = new Hero({name: 'test', health: 100, powerLevel: 1.5});
-gameEnemy.generateFood();
-const randomMove = gameEnemy.randomMove.bind(gameEnemy);
-
-setTimeout(() => {
-    randomMove(gameHero);
-    console.log(gameHero, gameEnemy);
-}, 8000);
