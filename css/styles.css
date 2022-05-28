@@ -1,4 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+.game-over {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 50%;
+  width: 50%;
+  background: rgb(198, 255, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.game-over * {
+  margin: 20px;
+}
+.game-over h2 {
+  font-size: 3rem;
+}
+.game-over p {
+  font-size: 2rem;
+}
+
 body {
   font-family: "Permanent Marker", cursive;
   position: relative;
@@ -30,7 +52,6 @@ body {
   border-radius: 10px;
   font-size: 3rem;
   text-shadow: -1px 0px 1px #555;
-  
 }
 .opening-screen button {
   padding: 0.5rem 1rem;
@@ -109,12 +130,5 @@ body {
   text-align: center;
   color: white;
 }
-
-img {    
-  width:  150px;
-  height: 150px;
-}
-
-
 
 /*# sourceMappingURL=styles.css.map */

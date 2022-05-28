@@ -39,7 +39,7 @@ const enemyTurn = (hero, enemy) => {
         enableButtons();
 
         console.log(hero, enemy);
-    }, 5000);
+    }, 10);
 }
 
 const setUpAttackBtn = (hero, enemy) => {

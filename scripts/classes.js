@@ -11,11 +11,19 @@ export class Character {
     }
 
     attack(target) {
-        target.health -= (this.currentFood.damage * this.powerLevel);
+        const newHealth = target.health - (this.currentFood.damage * this.powerLevel);
+        if (newHealth < 0) {
+            target.health = 0;
+            // this.gameOver();
+        }
+        else {
+            target.health = newHealth;
+        }
+
     }
 
     eat() {
-        let newHealth = this.health + this.currentFood.nutrition;
+        const newHealth = this.health + this.currentFood.nutrition;
         if (newHealth > this.maxHealth) {
             this.health = this.maxHealth;
         }
@@ -27,6 +35,10 @@ export class Character {
     generateFood() {
         this.currentFood = getRandom(foods);
     };
+
+    gameOver() {
+
+    }
 }
 
 export class Hero extends Character {
