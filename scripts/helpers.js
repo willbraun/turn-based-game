@@ -11,10 +11,14 @@ export const generateEnemy = () => {
     return new Enemy(getRandom(enemies));
 }
 
-const updateHealthBar = (char) => {
-    const healthBar = document.querySelector('.hero-health');
-    console.log(char.health)
-    return healthBar.style.width = `${char.health}%`
+const updateHealthBar = (hero, enemy) => {
+    // debugger;
+    const heroHealthNum = document.querySelector('.hero-health-bar-num');
+    const heroHealthBar = document.querySelector('.hero-health');
+    const heroPercentage = Math.round((hero.health / hero.maxHealth) * 100);
+    heroHealthBar.style.width = `${heroPercentage}%`;
+    heroHealthNum.innerHTML = Math.round(hero.health);
+    return;
 }
 
 const loadHeroTemplate = hero => {
@@ -47,11 +51,11 @@ const setUpAttackBtn = (hero, enemy) => {
     const attack = hero.attack.bind(hero);
     attackButton.addEventListener('click', () => {
         attack(enemy);
-        updateHealthBar(enemy);
         
         if (enemy.health > 0) {
             hero.generateFood();
             enemyTurn(hero, enemy);
+            updateHealthBar(hero);
         }
         
         disableButtons();
@@ -79,6 +83,7 @@ export const setUpGame = (hero, enemy) => {
     const startScreen = document.querySelector('.opening-screen');
     const gameScreen = document.querySelector('.game-screen');
     loadHeroTemplate(hero);
+    updateHealthBar(hero);
     startScreen.classList.add('off-screen');
     setTimeout(() => {
         setUpAttackBtn(hero, enemy);
