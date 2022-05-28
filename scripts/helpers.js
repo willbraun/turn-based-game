@@ -11,6 +11,12 @@ export const generateEnemy = () => {
     return new Enemy(getRandom(enemies));
 }
 
+const updateHealthBar = (char) => {
+    const healthBar = document.querySelector('.hero-health');
+    console.log(char.health)
+    return healthBar.style.width = `${char.health}%`
+}
+
 const loadHeroTemplate = hero => {
     const heroSource = document.querySelector('#hero-template').innerHTML;
     const template = Handlebars.compile(heroSource);
@@ -23,6 +29,7 @@ const setUpAttackBtn = (hero, enemy) => {
     const attack = hero.attack.bind(hero);
     attackButton.addEventListener('click', () => {
         attack(enemy);
+        updateHealthBar(enemy);
         console.log(enemy);
         hero.generateFood();
     });
@@ -33,6 +40,7 @@ const setUpEatBtn = hero => {
     const eat = hero.eat.bind(hero)
     eatButton.addEventListener('click', () => {
         eat();
+        updateHealthBar(hero);
         console.log(hero);
         hero.generateFood();
     });
@@ -41,7 +49,6 @@ const setUpEatBtn = hero => {
 export const setUpGame = (hero, enemy) => {
     const audio = document.getElementById('characterSelect');
     // audio.play();
-    // debugger;
     const startScreen = document.querySelector('.opening-screen');
     const gameScreen = document.querySelector('.game-screen');
     loadHeroTemplate(hero);
