@@ -49,10 +49,3 @@ export class Enemy extends Character {
         }
     }
 }
-
-// export class Game {
-//     constructor(selectedHero, generatedEnemy) {
-//         this.selectedHero = selectedHero;
-//         this.generatedEnemy = generatedEnemy;
-//     }
-// }

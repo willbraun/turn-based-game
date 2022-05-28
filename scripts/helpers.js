@@ -24,10 +24,20 @@ const loadHeroTemplate = hero => {
     document.querySelector('.game-screen').innerHTML = html;
 }
 
+const disableButtons = () => {
+    document.querySelectorAll('.attack-btn, .eat-btn').forEach(button => button.disabled = true);
+}
+
+const enableButtons = () => {
+    document.querySelectorAll('.attack-btn, .eat-btn').forEach(button => button.disabled = false);
+}
+
 const enemyTurn = (hero, enemy) => {
     setTimeout(() => {
         enemy.generateFood();
         enemy.randomMove.call(enemy, hero);
+        enableButtons();
+
         console.log(hero, enemy);
     }, 5000);
 }
@@ -41,6 +51,7 @@ const setUpAttackBtn = (hero, enemy) => {
         hero.generateFood();
         console.log(enemy);
 
+        disableButtons();
         enemyTurn(hero, enemy);
     });
 }
@@ -54,9 +65,12 @@ const setUpEatBtn = (hero, enemy) => {
         hero.generateFood();
         console.log(hero);
 
+        disableButtons();
         enemyTurn(hero, enemy);
     });
 }
+
+
 
 export const setUpGame = (hero, enemy) => {
     const audio = document.getElementById('characterSelect');
