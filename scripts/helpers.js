@@ -11,8 +11,7 @@ export const generateEnemy = () => {
     return new Enemy(getRandom(enemies));
 }
 
-const updateHealthBar = (hero, enemy) => {
-    // debugger;
+const updateHealthBar = (hero) => {
     const heroHealthNum = document.querySelector('.hero-health-bar-num');
     const heroHealthBar = document.querySelector('.hero-health');
     const heroPercentage = Math.round((hero.health / hero.maxHealth) * 100);
@@ -21,11 +20,23 @@ const updateHealthBar = (hero, enemy) => {
     return;
 }
 
+const updateFoodItem = (hero) => {
+    const foodIcon = document.querySelector('.food-item');
+    foodIcon.innerHTML = hero.currentFood.icon;
+}
+
 const loadHeroTemplate = hero => {
     const heroSource = document.querySelector('#hero-template').innerHTML;
     const template = Handlebars.compile(heroSource);
     const html = template(hero);
-    document.querySelector('.game-screen').innerHTML = html;
+    document.querySelector('.button-section').innerHTML = html;
+}
+
+const loadEnemyTemplate = enemy => {
+    const enemySource = document.querySelector('#enemy-display-template').innerHTML;
+    const template = Handlebars.compile(enemySource);
+    const html = template(enemy);
+    document.querySelector('.button-section').innerHTML = html;
 }
 
 export const disableButtons = () => {
@@ -54,6 +65,7 @@ const setUpAttackBtn = (hero, enemy) => {
         
         if (enemy.health > 0) {
             hero.generateFood();
+            updateFoodItem(hero);
             enemyTurn(hero, enemy);
             updateHealthBar(hero);
         }
@@ -70,6 +82,7 @@ const setUpEatBtn = (hero, enemy) => {
         eat();
         updateHealthBar(hero);
         hero.generateFood();
+        updateFoodItem(hero);
         enemyTurn(hero, enemy);
 
         disableButtons();
@@ -83,12 +96,15 @@ export const setUpGame = (hero, enemy) => {
     const startScreen = document.querySelector('.opening-screen');
     const gameScreen = document.querySelector('.game-screen');
     loadHeroTemplate(hero);
-    updateHealthBar(hero);
+
+    
     startScreen.classList.add('off-screen');
+    updateHealthBar(hero);
     setTimeout(() => {
         setUpAttackBtn(hero, enemy);
         setUpEatBtn(hero, enemy);
         hero.generateFood();
+        updateFoodItem(hero);
         gameScreen.classList.remove('hidden'); 
     }, 900);
 }

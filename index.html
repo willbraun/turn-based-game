@@ -72,6 +72,15 @@
 
         <div class="game-screen hidden w-100 h-100">
 
+            <div class="hero-display position-absolute w-50 h-75">
+            </div>
+
+            <div class="enemy-display position-absolute w-50 h-75">
+            </div>
+
+            <div class="button-section w-100 h-auto">
+            </div>
+
         </div>
 
 
@@ -108,7 +117,7 @@
 
                         <div class="row w-25">
                         <div class="food-display col d-flex justify-content-end">
-                            <span class="food-item">{{this.currentFood.icon}}</span>
+                            <span class="food-item"></span>
                         </div>
                     </div>
                 
@@ -121,8 +130,10 @@
         </script>
 
 
-        <script id="enemy-template" type="text/x-handlebars-template">
-
+        <script id="enemy-display-template" type="text/x-handlebars-template">
+            <div class="enemy-face">
+                <img src="{{enemy.faceImg}}" alt="face image" width="100%">
+            </div>
 
 
         </script>
