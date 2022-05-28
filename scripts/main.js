@@ -18,10 +18,10 @@ const selectLevi = document.querySelector('.select-hero-three');
 
 // testing
 // let testHero = new Hero({name: 'test', health: 100, powerLevel: 1.5});
-// enemy.generateFood();
-// const randomMove = enemy.randomMove.bind(enemy);
+gameEnemy.generateFood();
+const randomMove = gameEnemy.randomMove.bind(gameEnemy);
 
-// setTimeout(() => {
-//     randomMove(testHero);
-//     console.log(testHero, enemy);
-// }, 8000);
+setTimeout(() => {
+    randomMove(gameHero);
+    console.log(gameHero, gameEnemy);
+}, 8000);
