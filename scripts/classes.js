@@ -37,7 +37,9 @@ export class Character {
     };
 
     gameOver() {
-        document.querySelector('.game-over > .title').textContent = `Test wins`;
+        const title = this instanceof Hero ? `You win!` : `Game over... ${this.name} wins`;
+        
+        document.querySelector('.game-over > .title').textContent = title;
         document.querySelector('.game-over > .message').textContent = `Final attack: ${this.currentFood.icon}`
         
         document.querySelector('.game-over').style.visibility = 'visible';
@@ -57,7 +59,7 @@ export class Enemy extends Character {
     }
 
     randomMove(target) {
-        if (Math.random() > 0.5) {
+        if (Math.random() > 0.2) {
             this.attack(target);
         }
         else {

@@ -40,7 +40,7 @@ export const enemies = [
     {
         name: 'enemy 2',
         health: 50,
-        powerLevel: 2,
+        powerLevel: 2
     },
     {
         name: 'enemy 3',
