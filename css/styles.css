@@ -69,6 +69,8 @@ body {
 
 .food-display {
   font-size: 2rem;
+  width: 50%;
+  height: 50%;
 }
 .food-display .food-item {
   padding: 1rem;
@@ -88,6 +90,23 @@ body {
   padding: 0;
 }
 
+.hero-health-bar {
+  width: 100%;
+  padding: 0.1rem;
+}
+.hero-health-bar .hero-health {
+  background: rgb(255, 0, 0);
+  background: linear-gradient(90deg, rgb(255, 0, 0) 0%, rgb(215, 255, 0) 43%, rgb(39, 255, 0) 100%);
+}
+.hero-health-bar span {
+  background-color: transparent;
+  color: black;
+}
 
+.hero-entity {
+  padding: 0.5rem 0;
+  text-align: center;
+  color: white;
+}
 
 /*# sourceMappingURL=styles.css.map */

@@ -12,8 +12,8 @@ body {
 }
 
 .opening-screen {
-    background: rgb(255,255,255);
-    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(170,170,170,1) 56%, rgba(119,119,119,1) 100%);
+    background: rgb(255, 255, 255);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(170, 170, 170, 1) 56%, rgba(119, 119, 119, 1) 100%);
 
     h1 {
         font-size: 5rem;
@@ -27,6 +27,7 @@ body {
         -webkit-text-fill-color: transparent;
         -webkit-text-stroke: 3px black;
     }
+
     p {
         padding: 1rem;
         border-radius: 10px;
@@ -74,6 +75,8 @@ body {
 
 .food-display {
     font-size: 2rem;
+    width: 50%;
+    height: 50%;
 
     .food-item {
         padding: 1rem;
@@ -93,4 +96,25 @@ body {
         list-style: none;
         padding: 0;
     }
+}
+
+.hero-health-bar {
+    width: 100%;
+    padding: 0.1rem;
+
+    .hero-health {
+        background: rgb(255, 0, 0);
+        background: linear-gradient(90deg, rgba(255, 0, 0, 1) 0%, rgba(215, 255, 0, 1) 43%, rgba(39, 255, 0, 1) 100%);
+    }
+
+    span {
+        background-color: transparent;
+        color: black;
+    }
+}
+
+.hero-entity {
+    padding: 0.5rem 0;
+    text-align: center;
+    color: white;
 }

@@ -77,23 +77,28 @@
         </div>
 
 
-    
+
 
 
         <script id="hero-template" type="text/x-handlebars-template">
             <div class="game-wrapper">
 
                 <div class="hero-wrapper d-flex align-items-center justify-content-end h-25 w-100">
+                    <div class="d-flex justify-content-center align-items-center flex-column w-100">
 
-                    <div class="hero-health"><span>{{this.health}}</span></div>
-                    <div class="hero-entity">{{this.name}}</div>
-                    <div class="row w-25">
+                        <div class="hero-health-bar progress">
+                            <div class="hero-health progress-bar w-100"><span>{{this.health}}</span></div>
+                        </div>
+                        <div class="hero-entity">{{this.name}}</div>
+                    </div>
+
+                        <div class="row w-25">
                         <div class="food-display col d-flex justify-content-end">
                             <span class="food-item">{{this.currentFood.icon}}</span>
                         </div>
                     </div>
                 
-                    <div class="hero-options row w-100 justify-content-end">
+                    <div class="hero-options row w-50 justify-content-end">
                         <button class="attack-btn btn btn-danger col-6 m-3">Attack!</button>
                         <button class="eat-btn btn btn-success col-6 m-3">Eat!</button>
                     </div>
