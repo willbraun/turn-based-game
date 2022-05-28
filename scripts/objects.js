@@ -35,17 +35,20 @@ export const enemies = [
     {
         name: 'enemy 1',
         health: 120,
-        powerLevel: 0.8
+        powerLevel: 0.8,
+        faceImg: 'fill_murray_300x300.jpeg' // placeholder image
     },
     {
         name: 'enemy 2',
         health: 50,
-        powerLevel: 2
+        powerLevel: 2,
+        faceImg: 'fill_murray_300x300.jpeg'
     },
     {
         name: 'enemy 3',
         health: 100,
-        powerLevel: 1.1
+        powerLevel: 1.1,
+        faceImg: 'fill_murray_300x300.jpeg'
     }
 ]
 

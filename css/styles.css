@@ -2,9 +2,10 @@
 .game-over {
   visibility: hidden;
   position: absolute;
-  top: 0;
-  right: 0;
-  min-height: fit-content;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  height: fit-content;
   width: 50%;
   background: rgb(198, 255, 255);
   border-radius: 20px;
@@ -26,14 +27,26 @@
   justify-content: center;
   align-items: center;
 }
-.game-over img {
-  width: 30%;
-}
-
-.message {
+.game-over .message {
   font-size: 2rem;
 }
+.game-over img {
+  width: 25%;
+  animation: nodSide 1s;
+  animation-iteration-count: infinite;
+}
 
+@keyframes nodSide {
+  0% {
+    transform: rotateZ(-10deg);
+  }
+  50% {
+    transform: rotateZ(10deg);
+  }
+  100% {
+    transform: rotateZ(-10deg);
+  }
+}
 body {
   font-family: "Permanent Marker", cursive;
   position: relative;

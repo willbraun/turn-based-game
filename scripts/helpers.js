@@ -39,7 +39,7 @@ const enemyTurn = (hero, enemy) => {
         enableButtons();
 
         console.log(hero, enemy);
-    }, 10);
+    }, 10); // !!!! Make this longer when finished
 }
 
 const setUpAttackBtn = (hero, enemy) => {
@@ -70,10 +70,8 @@ const setUpEatBtn = (hero, enemy) => {
     });
 }
 
-
-
 export const setUpGame = (hero, enemy) => {
-    const audio = document.getElementById('characterSelect');
+    // const audio = document.getElementById('characterSelect');
     // audio.play();
     const startScreen = document.querySelector('.opening-screen');
     const gameScreen = document.querySelector('.game-screen');
