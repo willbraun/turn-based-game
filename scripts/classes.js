@@ -37,10 +37,17 @@ export class Character {
     };
 
     gameOver() {
-        const title = this instanceof Hero ? `You win!` : `Game over... ${this.name} wins`;
+        let title = "";
+        if (this instanceof Hero) {
+            title = `You win!`;
+        } 
+        else {
+            title = `Game over... ${this.name} wins`;
+        }
+        document.querySelectorAll('.game-over img').forEach(img => img.src = `./files/${this.faceImg}`);
         
-        document.querySelector('.game-over > .title').textContent = title;
-        document.querySelector('.game-over > .message').textContent = `Final attack: ${this.currentFood.icon}`
+        document.querySelector('.game-over .title').textContent = title;
+        document.querySelector('.game-over .message').textContent = `Final attack: ${this.currentFood.icon}`
         
         document.querySelector('.game-over').style.visibility = 'visible';
         console.log('game over');

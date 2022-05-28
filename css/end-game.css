@@ -9,12 +9,16 @@
   border-radius: 20px;
   box-shadow: -4px 4px 5px 0px rgba(107, 104, 105, 0.48);
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
 }
 .game-over * {
   margin: 20px;
+}
+.game-over .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .title {
