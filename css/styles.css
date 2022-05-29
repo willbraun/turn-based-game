@@ -121,9 +121,10 @@ body {
   height: 50%;
 }
 .food-display .food-item {
-  padding: 1rem;
+  padding: 2rem;
   background-color: #AAA;
   border-radius: 50%;
+  font-size: 3rem;
 }
 
 .hero-stats {
@@ -164,6 +165,24 @@ body {
 
 .enemy-display {
   right: 0;
+}
+
+.enemy-face, .hero-face {
+  position: relative;
+}
+
+.e-face {
+  position: absolute;
+  top: -55px;
+  left: 41%;
+  transform: scale(0.6);
+}
+
+.h-face {
+  position: absolute;
+  top: -120px;
+  left: 13%;
+  transform: scale(0.6);
 }
 
 /*# sourceMappingURL=styles.css.map */

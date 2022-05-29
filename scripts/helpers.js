@@ -27,10 +27,11 @@ const updateHeroHealthBar = (hero) => {
 }
 
 const updateEnemyHealthBar = (enemy) => {
+    const enemyHealthNum = document.querySelector('.enemy-health-num');
     const enemyHealthBar = document.querySelector('.enemy-health');
     const enemyPercentage = Math.round((enemy.health / enemy.maxHealth) * 100);
-    console.log(enemyPercentage);
     enemyHealthBar.style.width = `${enemyPercentage}%`;
+    enemyHealthNum.innerHTML = Math.round(enemy.health);
     if (enemyPercentage > 31) {
         enemyHealthBar.style.background = '#09ff00';
     } else if (enemyPercentage < 30) {
@@ -58,6 +59,14 @@ const loadEnemyTemplate = enemy => {
     const html = template(enemy);
     document.querySelector('.enemy-display').innerHTML = html;
 }
+
+const loadHeroFaceTemplate = hero => {
+    const heroFaceSource = document.querySelector('#hero-display-template').innerHTML;
+    const template = Handlebars.compile(heroFaceSource);
+    const html = template(hero);
+    document.querySelector('.hero-display').innerHTML = html;
+}
+
 
 export const disableButtons = () => {
     document.querySelectorAll('.attack-btn, .eat-btn').forEach(button => button.disabled = true);
@@ -118,6 +127,7 @@ export const setUpGame = (hero, enemy) => {
     const startScreen = document.querySelector('.opening-screen');
     const gameScreen = document.querySelector('.game-screen');
     loadEnemyTemplate(enemy);
+    loadHeroFaceTemplate(hero);
     loadHeroTemplate(hero);
     startScreen.classList.add('off-screen');
     updateHeroHealthBar(hero);

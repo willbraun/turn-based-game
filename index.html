@@ -115,10 +115,8 @@
                         <div class="hero-entity">{{this.name}}</div>
                     </div>
 
-                        <div class="row w-25">
-                        <div class="food-display col d-flex justify-content-end">
+                        <div class="food-display d-flex justify-content-end">
                             <span class="food-item"></span>
-                        </div>
                     </div>
                 
                     <div class="hero-options row w-50 justify-content-end">
@@ -131,7 +129,7 @@
 
 
         <script id="enemy-display-template" type="text/x-handlebars-template">
-           <div class="enemy-display-wrapper w-100 h-100 d-flex flex-column justify-content-end align-items-center">
+           <div class="enemy-display-wrapper w-100 h-100 mt-3 d-flex flex-column justify-content-start align-items-center">
 
                <div class="enemy-health-display position-relative w-75">
                    <div class="enemy-health-bar progress">
@@ -141,11 +139,21 @@
                 </div>
                 
                 <div class="enemy-face h-50 w-50 position-relative">
-                    <img src="../files/{{this.faceImg}}" alt="face image" width="100%">
+                    <img src="./files/street-fighter-capcom-vs-snk.gif" alt="SF" wiidth="50%">
+                    <img src="../files/{{this.faceImg}}" class='e-face' alt="face image" width="50%">
                 </div>
                 
             </div>
 
+        </script>
+
+        <script id="hero-display-template" type="text/x-handlebars-template">
+            <div class="hero-display-wrapper d-flex flex-column justify-content-center align-items-start w-100 h-100">
+                <div class="hero-face h-50 w-50 position-realative">
+                    <img src="./files/ryu-idle.gif" alt="ryu-idle" width="100%">
+                    <img src="./files/{{this.faceImg}}" class="h-face" alt="faceImg">
+                </div>
+            </div>
         </script>
     </main>
 
