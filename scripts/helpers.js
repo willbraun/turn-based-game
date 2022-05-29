@@ -11,6 +11,7 @@ export const generateEnemy = () => {
     return new Enemy(getRandom(enemies));
 }
 
+
 const updateHeroHealthBar = (hero) => {
     const heroHealthNum = document.querySelector('.hero-health-num');
     const heroHealthBar = document.querySelector('.hero-health');
@@ -90,9 +91,12 @@ const enemyTurn = (hero, enemy) => {
 const setUpAttackBtn = (hero, enemy) => {
     const attackButton = document.querySelector('.attack-btn');
     const attack = hero.attack.bind(hero);
+    const heroThrow = document.getElementById('hero-throw');
+    
     attackButton.addEventListener('click', () => {
         attack(enemy);
         updateEnemyHealthBar(enemy);
+        heroThrow.play();
 
         if (enemy.health > 0) {
             hero.generateFood();
@@ -109,7 +113,9 @@ const setUpAttackBtn = (hero, enemy) => {
 const setUpEatBtn = (hero, enemy) => {
     const eatButton = document.querySelector('.eat-btn');
     const eat = hero.eat.bind(hero)
+    const eatFood = document.getElementById("eatFood")
     eatButton.addEventListener('click', () => {
+        eatFood.play()
         eat();
         updateHeroHealthBar(hero);
         hero.generateFood();
@@ -122,8 +128,8 @@ const setUpEatBtn = (hero, enemy) => {
 }
 
 export const setUpGame = (hero, enemy) => {
-    // const audio = document.getElementById('characterSelect');
-    // audio.play();
+    const audio = document.getElementById('char-select-audio');
+    audio.play();
     const startScreen = document.querySelector('.opening-screen');
     const gameScreen = document.querySelector('.game-screen');
     loadEnemyTemplate(enemy);
@@ -139,4 +145,8 @@ export const setUpGame = (hero, enemy) => {
         updateFoodItem(hero);
         gameScreen.classList.remove('hidden');
     }, 900);
+    setTimeout(() => {
+        const score = document.getElementById('score')
+        score.play()
+    }, 1000);
 }

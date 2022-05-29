@@ -41,12 +41,17 @@ export class Character {
     gameOver() {
         disableButtons();
 
+        const youLost = document.getElementById('youLose')
+        const youWon = document.getElementById('youWin')
+        score.pause();
         let title = "";
         if (this instanceof Hero) {
             title = `🏆🏆🏆   You win!   🏆🏆🏆`;
+            youWon.play()
         } 
         else {
             title = `Game over... ${this.name} wins`;
+            youLost.play()
         }
 
         

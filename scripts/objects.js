@@ -62,7 +62,7 @@ export const heroes = [
         heroImg: '😎'   
     },
     {
-        name: 'Matt',
+        name: 'Matthew',
         health: 90,
         powerLevel: 1.8,
         faceImg: '8-Bit-Matthew.png',
