@@ -3,8 +3,8 @@ import { enemies } from './objects.js';
 
 export const getRandom = objArray => objArray[Math.floor(Math.random() * objArray.length)];
 
-export const generateHero = ({ name, health, powerLevel, faceImg, backgroundImg }) => {
-    return new Hero({ name: name, health: health, powerLevel: powerLevel, faceImg: faceImg, backgroundImg: backgroundImg });
+export const generateHero = ({ name, health, powerLevel, faceImg, backgroundImg, standImg, throwImg }) => {
+    return new Hero({ name: name, health: health, powerLevel: powerLevel, faceImg: faceImg, backgroundImg: backgroundImg, standImg: standImg, throwImg: throwImg });
 }
 
 export const generateEnemy = () => {
@@ -13,7 +13,6 @@ export const generateEnemy = () => {
 
 const setBackground = (hero) => {
     const gameBg = document.querySelector('.game-screen');
-    console.log(hero.backgroundImg);
     gameBg.style.background = `url(./background-images/${hero.backgroundImg})`;
     gameBg.style.backgroundPosition = `0, 0`;
 }
@@ -99,10 +98,12 @@ const setUpAttackBtn = (hero, enemy) => {
     const attackButton = document.querySelector('.attack-btn');
     const attack = hero.attack.bind(hero);
     const heroThrow = document.getElementById('hero-throw');
+    const heroThrowMove = hero.heroThrow.bind(hero);
     
     attackButton.addEventListener('click', () => {
         attack(enemy);
         updateEnemyHealthBar(enemy);
+        heroThrowMove();
         heroThrow.play();
 
         if (enemy.health > 0) {
@@ -146,7 +147,6 @@ export const setUpGame = (hero, enemy) => {
     updateHeroHealthBar(hero);
     updateEnemyHealthBar(enemy);
     setTimeout(() => {
-        console.log(hero.backgroundImg);
         setBackground(hero);
         setUpAttackBtn(hero, enemy);
         setUpEatBtn(hero, enemy);

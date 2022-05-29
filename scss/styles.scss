@@ -131,16 +131,28 @@ body {
     position: relative;
 }
 
-.e-face {
-    position: absolute;
-    top: -55px;
-    left: 41%;
-    transform: scale(0.6);
+.enemy-standing, .enemy-throwing {
+    transform: scale(0.5) translate(0, -50%);
 }
 
-.h-face {
-    position: absolute;
-    top: -120px;
-    left: 13%;
-    transform: scale(0.6);
+.hero-standing, .hero-throwing {
+    transform: translate(25%, -25%) scale(1);
+}
+
+.eating {
+    animation: eating 0.5s;
+}
+
+@keyframes eating {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform: translate3d(25%, 0, 1);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
 }

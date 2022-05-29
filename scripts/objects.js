@@ -36,19 +36,25 @@ export const enemies = [
         name: 'enemy 1',
         health: 120,
         powerLevel: 0.8,
-        faceImg: 'fill_murray_300x300.jpeg' // placeholder image
+        faceImg: 'fill_murray_300x300.jpeg', // placeholder image
+        standImg: 'Bully-standing.png',
+        throwImg: 'Bully-throwing.png'
     },
     {
         name: 'enemy 2',
         health: 50,
         powerLevel: 2,
-        faceImg: 'fill_murray_300x300.jpeg'
+        faceImg: 'fill_murray_300x300.jpeg',
+        standImg: 'Kid standing.png',
+        throwImg: 'Kid throwing.png'
     },
     {
         name: 'enemy 3',
         health: 100,
         powerLevel: 1.1,
-        faceImg: 'fill_murray_300x300.jpeg'
+        faceImg: 'fill_murray_300x300.jpeg',
+        standImg: 'Teacher-standing.png',
+        throwImg: 'Teacher-throwing.png'
     }
 ]
 
@@ -59,6 +65,8 @@ export const heroes = [
         powerLevel: 1.2,
         faceImg: '8-Bit-Will.png',
         backgroundImg: '637660120653570000.jpeg', // From Will - I removed ./background-images/ so we can reference these from anywhere 
+        standImg: '8-Bit-Will-standing.png',
+        throwImg: '8-Bit-Will-throw.png'
     },
     {
         name: 'Matthew',
@@ -66,6 +74,8 @@ export const heroes = [
         powerLevel: 1.8,
         faceImg: '8-Bit-Matthew.png',
         backgroundImg: 'Cafe1-Copy_1.jpeg',
+        standImg: '8-Bit-Matthew-standing.png',
+        throwImg: '8-Bit-Matthew-throw.png'
     },
     {
         name: 'Levi',
@@ -73,5 +83,7 @@ export const heroes = [
         powerLevel: 0.9,
         faceImg: '8-Bit-Levi.png',
         backgroundImg: 'JHS_3649-HDR-scaled.jpeg',
+        standImg: '8-Bit-Levi-standing.png',
+        throwImg: '8-Bit-Levi-throw.png'
     }
 ]

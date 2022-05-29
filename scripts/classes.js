@@ -2,7 +2,7 @@ import { foods } from './objects.js';
 import { getRandom, disableButtons } from './helpers.js';
 
 export class Character {
-    constructor({name, health, powerLevel, faceImg, backgroundImg}) {
+    constructor({ name, health, powerLevel, faceImg, backgroundImg, standImg, throwImg }) {
         this.name = name;
         this.health = health;
         this.maxHealth = health;
@@ -10,6 +10,8 @@ export class Character {
         this.powerLevel = powerLevel;
         this.faceImg = faceImg;
         this.backgroundImg = backgroundImg;
+        this.standImg = standImg;
+        this.throwImg = throwImg;
 
     }
 
@@ -49,13 +51,13 @@ export class Character {
         if (this instanceof Hero) {
             title = `🏆🏆🏆   You win!   🏆🏆🏆`;
             youWon.play()
-        } 
+        }
         else {
             title = `Game over... ${this.name} wins`;
             youLost.play()
         }
 
-        
+
         document.querySelector('.game-over .title').textContent = title;
         document.querySelector('.game-over .message').textContent = `Final attack: ${this.currentFood.icon}`
         document.querySelectorAll('.game-over img').forEach(img => img.src = `../files/${this.faceImg}`);
@@ -66,19 +68,38 @@ export class Character {
 }
 
 export class Hero extends Character {
-    constructor(name, health, powerLevel, faceImg, backgroundImg) {
-        super(name, health, powerLevel, faceImg, backgroundImg);
+    constructor(name, health, powerLevel, faceImg, backgroundImg, standImg, throwImg) {
+        super(name, health, powerLevel, faceImg, backgroundImg, standImg, throwImg);
+    }
+
+    heroThrow() {
+        const heroStanding = document.querySelector('.hero-standing');
+        heroStanding.src = `./files/${this.throwImg}`;
+        heroStanding.style.transform = 'translate(25%, 0) scale(1.5)';
+        setTimeout(() => {
+            heroStanding.src = `./files/${this.standImg}`;
+            heroStanding.style.transform = 'translate(25%, -25%) scale(1)';
+        }, 1000);
     }
 }
 
 export class Enemy extends Character {
-    constructor(name, health, powerLevel, faceImg, backgroundImg) {
-        super(name, health, powerLevel, faceImg, backgroundImg);
+    constructor(name, health, powerLevel, faceImg, backgroundImg, standImg, throwImg) {
+        super(name, health, powerLevel, faceImg, backgroundImg, standImg, throwImg);
+    }
+
+    enemyThrow() {
+        const enemyStanding = document.querySelector('.enemy-standing');
+        enemyStanding.src = `./files/${this.throwImg}`;
+        setTimeout(() => {
+            enemyStanding.src = `./files/${this.standImg}`;
+        }, 1000);
     }
 
     randomMove(target) {
         if (Math.random() > 0.2) {
             this.attack(target);
+            this.enemyThrow();
         }
         else {
             this.eat();
