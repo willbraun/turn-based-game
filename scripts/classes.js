@@ -2,13 +2,14 @@ import { foods } from './objects.js';
 import { getRandom, disableButtons } from './helpers.js';
 
 export class Character {
-    constructor({name, health, powerLevel, faceImg}) {
+    constructor({name, health, powerLevel, faceImg, backgroundImg}) {
         this.name = name;
         this.health = health;
         this.maxHealth = health;
         this.currentFood = null;
         this.powerLevel = powerLevel;
         this.faceImg = faceImg;
+        this.backgroundImg = backgroundImg;
 
     }
 
@@ -65,14 +66,14 @@ export class Character {
 }
 
 export class Hero extends Character {
-    constructor(name, health, powerLevel, faceImg) {
-        super(name, health, powerLevel, faceImg);
+    constructor(name, health, powerLevel, faceImg, backgroundImg) {
+        super(name, health, powerLevel, faceImg, backgroundImg);
     }
 }
 
 export class Enemy extends Character {
-    constructor(name, health, powerLevel, faceImg) {
-        super(name, health, powerLevel, faceImg);
+    constructor(name, health, powerLevel, faceImg, backgroundImg) {
+        super(name, health, powerLevel, faceImg, backgroundImg);
     }
 
     randomMove(target) {

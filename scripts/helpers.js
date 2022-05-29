@@ -3,12 +3,19 @@ import { enemies } from './objects.js';
 
 export const getRandom = objArray => objArray[Math.floor(Math.random() * objArray.length)];
 
-export const generateHero = ({ name, health, powerLevel, faceImg }) => {
-    return new Hero({ name: name, health: health, powerLevel: powerLevel, faceImg: faceImg });
+export const generateHero = ({ name, health, powerLevel, faceImg, backgroundImg }) => {
+    return new Hero({ name: name, health: health, powerLevel: powerLevel, faceImg: faceImg, backgroundImg: backgroundImg });
 }
 
 export const generateEnemy = () => {
     return new Enemy(getRandom(enemies));
+}
+
+const setBackground = (hero) => {
+    const gameBg = document.querySelector('.game-screen');
+    console.log(hero.backgroundImg);
+    gameBg.style.background = `url(./background-images/${hero.backgroundImg})`;
+    gameBg.style.backgroundPosition = `0, 0`;
 }
 
 
@@ -139,6 +146,8 @@ export const setUpGame = (hero, enemy) => {
     updateHeroHealthBar(hero);
     updateEnemyHealthBar(enemy);
     setTimeout(() => {
+        console.log(hero.backgroundImg);
+        setBackground(hero);
         setUpAttackBtn(hero, enemy);
         setUpEatBtn(hero, enemy);
         hero.generateFood();

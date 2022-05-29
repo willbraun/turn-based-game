@@ -58,8 +58,7 @@ export const heroes = [
         health: 120,
         powerLevel: 1.2,
         faceImg: '8-Bit-Will.png',
-        backgroundImg: '637660120653570000.jpeg', // From Will - I removed ./background-images/ so we can reference these from anywhere
-        heroImg: '😎'   
+        backgroundImg: '637660120653570000.jpeg', // From Will - I removed ./background-images/ so we can reference these from anywhere 
     },
     {
         name: 'Matthew',
@@ -67,7 +66,6 @@ export const heroes = [
         powerLevel: 1.8,
         faceImg: '8-Bit-Matthew.png',
         backgroundImg: 'Cafe1-Copy_1.jpeg',
-        heroImg: '🥸'
     },
     {
         name: 'Levi',
@@ -75,6 +73,5 @@ export const heroes = [
         powerLevel: 0.9,
         faceImg: '8-Bit-Levi.png',
         backgroundImg: 'JHS_3649-HDR-scaled.jpeg',
-        heroImg: '🤠'
     }
 ]
