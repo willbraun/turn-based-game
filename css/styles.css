@@ -88,6 +88,15 @@ body {
 }
 .opening-screen button:hover {
   border: 2px solid black;
+  background-color: #f06318;
+}
+
+.opening-screen img {
+    width:  200px;
+    height: 200px;
+    object-fit: cover;
+    border: 8px solid #e00202;
+    background-color: #ffc30d;
 }
 
 .off-screen {
