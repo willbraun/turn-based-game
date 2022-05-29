@@ -98,22 +98,17 @@ body {
     }
 }
 
-.hero-health-bar {
+.hero-health-bar,
+.enemy-health-bar {
     width: 100%;
     padding: 0.1rem;
-
-    .hero-health {
-        background: rgb(255, 0, 0);
-        background: linear-gradient(90deg, rgba(255, 0, 0, 1) 0%, rgba(215, 255, 0, 1) 43%, rgba(39, 255, 0, 1) 100%);
-    }
-
-    span {
-        background-color: transparent;
-        color: black;
-    }
 }
 
-.hero-health-bar-num {
+.hero-health, .enemy-health {
+    background: #09ff00;
+}
+
+.hero-health-num {
     color: white;
 }
 

@@ -45,7 +45,7 @@
                 </div>
                 <img class="Matthew-photo" src="files/8-Bit-Matthew.png" alt="">
                 <div class="hero hero-two m-3 text-center">
-                    
+
                     <div class="hero-stats">
                         <ul>
                             <li>Name: Matthew</li>
@@ -111,7 +111,7 @@
                         <div class="hero-health-bar progress">
                             <div class="hero-health progress-bar"></div>
                         </div>
-                        <span class="hero-health-bar-num">{{this.health}}</span>
+                        <span class="hero-health-num">{{this.health}}</span>
                         <div class="hero-entity">{{this.name}}</div>
                     </div>
 
@@ -131,10 +131,20 @@
 
 
         <script id="enemy-display-template" type="text/x-handlebars-template">
-            <div class="enemy-face">
-                <img src="{{enemy.faceImg}}" alt="face image" width="100%">
-            </div>
+           <div class="enemy-display-wrapper w-100 h-100 d-flex flex-column justify-content-end align-items-center">
 
+               <div class="enemy-health-display position-relative w-75">
+                   <div class="enemy-health-bar progress">
+                       <div class="enemy-health progress-bar"></div>
+                    </div>
+                    <span class="enemy-health-num"></span>
+                </div>
+                
+                <div class="enemy-face h-50 w-50 position-relative">
+                    <img src="../files/{{this.faceImg}}" alt="face image" width="100%">
+                </div>
+                
+            </div>
 
         </script>
     </main>

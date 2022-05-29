@@ -138,20 +138,17 @@ body {
   padding: 0;
 }
 
-.hero-health-bar {
+.hero-health-bar,
+.enemy-health-bar {
   width: 100%;
   padding: 0.1rem;
 }
-.hero-health-bar .hero-health {
-  background: rgb(255, 0, 0);
-  background: linear-gradient(90deg, rgb(255, 0, 0) 0%, rgb(215, 255, 0) 43%, rgb(39, 255, 0) 100%);
-}
-.hero-health-bar span {
-  background-color: transparent;
-  color: black;
+
+.hero-health, .enemy-health {
+  background: #09ff00;
 }
 
-.hero-health-bar-num {
+.hero-health-num {
   color: white;
 }
 

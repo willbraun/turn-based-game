@@ -3,21 +3,41 @@ import { enemies } from './objects.js';
 
 export const getRandom = objArray => objArray[Math.floor(Math.random() * objArray.length)];
 
-export const generateHero = ({name, health, powerLevel, faceImg}) => {
-    return new Hero({name: name, health: health, powerLevel: powerLevel, faceImg: faceImg});
+export const generateHero = ({ name, health, powerLevel, faceImg }) => {
+    return new Hero({ name: name, health: health, powerLevel: powerLevel, faceImg: faceImg });
 }
 
 export const generateEnemy = () => {
     return new Enemy(getRandom(enemies));
 }
 
-const updateHealthBar = (hero) => {
-    const heroHealthNum = document.querySelector('.hero-health-bar-num');
+const updateHeroHealthBar = (hero) => {
+    const heroHealthNum = document.querySelector('.hero-health-num');
     const heroHealthBar = document.querySelector('.hero-health');
     const heroPercentage = Math.round((hero.health / hero.maxHealth) * 100);
     heroHealthBar.style.width = `${heroPercentage}%`;
     heroHealthNum.innerHTML = Math.round(hero.health);
-    return;
+    if (heroPercentage > 31) {
+        heroHealthBar.style.background = '#09ff00';
+    } else if (heroPercentage < 30) {
+        heroHealthBar.style.background = '#ffc30d';
+    } else if (heroPercentage < 20) {
+        heroHealthBar.style.background = '#c10303';
+    }
+}
+
+const updateEnemyHealthBar = (enemy) => {
+    const enemyHealthBar = document.querySelector('.enemy-health');
+    const enemyPercentage = Math.round((enemy.health / enemy.maxHealth) * 100);
+    console.log(enemyPercentage);
+    enemyHealthBar.style.width = `${enemyPercentage}%`;
+    if (enemyPercentage > 31) {
+        enemyHealthBar.style.background = '#09ff00';
+    } else if (enemyPercentage < 30) {
+        enemyHealthBar.style.background = '#ffc30d';
+    } else if (enemyPercentage < 20) {
+        enemyHealthBar.style.background = '#c10303';
+    }
 }
 
 const updateFoodItem = (hero) => {
@@ -36,7 +56,7 @@ const loadEnemyTemplate = enemy => {
     const enemySource = document.querySelector('#enemy-display-template').innerHTML;
     const template = Handlebars.compile(enemySource);
     const html = template(enemy);
-    document.querySelector('.button-section').innerHTML = html;
+    document.querySelector('.enemy-display').innerHTML = html;
 }
 
 export const disableButtons = () => {
@@ -51,6 +71,7 @@ const enemyTurn = (hero, enemy) => {
     setTimeout(() => {
         enemy.generateFood();
         enemy.randomMove.call(enemy, hero);
+        updateEnemyHealthBar(enemy);
         enableButtons();
 
         console.log(hero, enemy);
@@ -62,14 +83,15 @@ const setUpAttackBtn = (hero, enemy) => {
     const attack = hero.attack.bind(hero);
     attackButton.addEventListener('click', () => {
         attack(enemy);
-        
+        updateEnemyHealthBar(enemy);
+
         if (enemy.health > 0) {
             hero.generateFood();
             updateFoodItem(hero);
             enemyTurn(hero, enemy);
-            updateHealthBar(hero);
+            updateHeroHealthBar(hero);
         }
-        
+
         disableButtons();
         console.log(enemy);
     });
@@ -80,7 +102,7 @@ const setUpEatBtn = (hero, enemy) => {
     const eat = hero.eat.bind(hero)
     eatButton.addEventListener('click', () => {
         eat();
-        updateHealthBar(hero);
+        updateHeroHealthBar(hero);
         hero.generateFood();
         updateFoodItem(hero);
         enemyTurn(hero, enemy);
@@ -95,16 +117,16 @@ export const setUpGame = (hero, enemy) => {
     // audio.play();
     const startScreen = document.querySelector('.opening-screen');
     const gameScreen = document.querySelector('.game-screen');
+    loadEnemyTemplate(enemy);
     loadHeroTemplate(hero);
-
-    
     startScreen.classList.add('off-screen');
-    updateHealthBar(hero);
+    updateHeroHealthBar(hero);
+    updateEnemyHealthBar(enemy);
     setTimeout(() => {
         setUpAttackBtn(hero, enemy);
         setUpEatBtn(hero, enemy);
         hero.generateFood();
         updateFoodItem(hero);
-        gameScreen.classList.remove('hidden'); 
+        gameScreen.classList.remove('hidden');
     }, 900);
 }
