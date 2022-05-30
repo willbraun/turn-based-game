@@ -264,7 +264,7 @@ body {
 
 .hero-throwing,
 .move-right {
-  animation: throwRight 1s;
+  animation: throwRight 1s linear;
 }
 
 @keyframes throwLeft {
@@ -280,7 +280,7 @@ body {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(45vw);
+    transform: translateX(40vw);
   }
 }
 
