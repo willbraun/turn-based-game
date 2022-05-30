@@ -262,12 +262,25 @@ body {
   animation: throwLeft 1s;
 }
 
+.hero-throwing,
+.move-right {
+  animation: throwRight 1s;
+}
+
 @keyframes throwLeft {
   0% {
     transform: translateX(0);
   }
   100% {
     transform: translateX(-50vw);
+  }
+}
+@keyframes throwRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(45vw);
   }
 }
 
