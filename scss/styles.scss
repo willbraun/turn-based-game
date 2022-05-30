@@ -92,15 +92,21 @@ body {
 
 .food-display {
     font-size: 2rem;
-    width: 50%;
+    width: 25%;
     height: 50%;
 
     .food-item {
         padding: 2rem;
+        width: 7.5rem;
         background-color: #AAA;
         border-radius: 50%;
         font-size: 3rem;
     }
+}
+
+.food-info {
+    color: white;
+    padding: 1rem;
 }
 
 .hero-stats {

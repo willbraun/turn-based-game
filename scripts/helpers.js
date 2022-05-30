@@ -51,7 +51,11 @@ const updateEnemyHealthBar = (enemy) => {
 
 const updateFoodItem = (hero) => {
     const foodIcon = document.querySelector('.food-item');
+    const foodNutri = document.querySelector('.food-nutri');
+    const foodDmg = document.querySelector('.food-dmg');
     foodIcon.innerHTML = hero.currentFood.icon;
+    foodNutri.innerHTML = `Nutrition:<br>${hero.currentFood.nutrition}`;
+    foodDmg.innerHTML = `Damage:<br>${hero.currentFood.damage}`;
 }
 
 const loadHeroTemplate = hero => {
