@@ -28,6 +28,36 @@ export const foods = [
         icon: '🍭',
         nutrition: 1,
         damage: 1
+    },
+    {
+        name: 'steak',
+        icon: '🥩',
+        nutrition: 3,
+        damage: 9 
+    },
+    {
+        name: 'donut',
+        icon: '🍩',
+        nutrition: 1,
+        damage: 4
+    },
+    {
+        name: 'pineapple',
+        icon: '🍍',
+        nutrition: 5,
+        damage: 12
+    },
+    {
+        name: 'carrot',
+        icon: '🥕',
+        nutrition: 9,
+        damage: 1
+    },
+    {
+        name: 'tater',
+        icon: '🥔',
+        nutrition: 7,
+        damage: 5
     }
 ];
 
