@@ -1,7 +1,7 @@
 export const foods = [
     {   
         name: 'watermelon',
-        icon: '🍉',         /// emojis are here so there's something to display
+        icon: '🍉',
         nutrition: 10,
         damage: 10
     },
@@ -63,26 +63,26 @@ export const foods = [
 
 export const enemies = [
     {
-        name: 'enemy 1',
+        name: 'Scott',
         health: 120,
         powerLevel: 0.8,
-        faceImg: 'fill_murray_300x300.jpeg', // placeholder image
+        faceImg: 'Bully-standing.png',
         standImg: 'Bully-standing.png',
         throwImg: 'Bully-throwing.png'
     },
     {
-        name: 'enemy 2',
+        name: 'Steve',
         health: 50,
         powerLevel: 2,
-        faceImg: 'fill_murray_300x300.jpeg',
+        faceImg: 'Kid standing.png',
         standImg: 'Kid standing.png',
         throwImg: 'Kid throwing.png'
     },
     {
-        name: 'enemy 3',
+        name: 'Teacher',
         health: 100,
         powerLevel: 1.1,
-        faceImg: 'fill_murray_300x300.jpeg',
+        faceImg: 'Teacher-standing.png',
         standImg: 'Teacher-standing.png',
         throwImg: 'Teacher-throwing.png'
     }
@@ -94,7 +94,7 @@ export const heroes = [
         health: 120,
         powerLevel: 1.2,
         faceImg: '8-Bit-Will.png',
-        backgroundImg: '637660120653570000.jpeg', // From Will - I removed ./background-images/ so we can reference these from anywhere 
+        backgroundImg: '637660120653570000.jpeg',
         standImg: '8-Bit-Will-standing.png',
         throwImg: '8-Bit-Will-throw.png'
     },

@@ -1,5 +1,5 @@
 import { foods } from './objects.js';
-import { getRandom, disableButtons } from './helpers.js';
+import { getRandom, disableButtons, updateHeroHealthBar, updateEnemyHealthBar } from './helpers.js';
 
 export class Character {
     constructor({ name, health, powerLevel, faceImg, backgroundImg, standImg, throwImg }) {
@@ -16,17 +16,27 @@ export class Character {
 
     attack(target) {
         const newHealth = target.health - (this.currentFood.damage * this.powerLevel);
-        if (Math.round(newHealth) <= 0) {
-            target.health = 0;
-            this.gameOver();
-        }
-        else {
-            target.health = newHealth;
-        }
         const throwSound = document.getElementById('throw-sound');
         const hitSound = document.getElementById('hit-sound');
         throwSound.play(); 
-        setTimeout(() => hitSound.play(), 1000);
+        setTimeout(() => {
+            hitSound.play();
+            
+            if (Math.round(newHealth) <= 0) {
+                target.health = 0;
+                this.gameOver();
+            }
+            else {
+                target.health = newHealth;
+            }
+            
+            if (this instanceof Hero) {
+                updateEnemyHealthBar(target);
+            }
+            else {
+                updateHeroHealthBar(target);
+            }
+        }, 1000);
     }
 
     eat() {
@@ -45,14 +55,6 @@ export class Character {
         this.currentFood = getRandom(foods);
     };
 
-    // eatMotion(foodLocationClass) {
-    //     const foodLocation = document.querySelector(foodLocationClass);
-    //     foodLocation.classList.toggle('.eating');
-    //     setTimeout(() => {
-    //         foodLocation.classList.toggle('.eating');
-    //     }, 1000);
-    // }
-
     gameOver() {
         disableButtons();
 
@@ -69,13 +71,9 @@ export class Character {
             youLost.play()
         }
 
-
         document.querySelector('.game-over .title').textContent = title;
-        document.querySelector('.game-over .message').textContent = `Final attack: ${this.currentFood.icon}`
         document.querySelectorAll('.game-over img').forEach(img => img.src = `../files/${this.faceImg}`);
-
         document.querySelector('.game-over').style.visibility = 'visible';
-        console.log('game over');
     }
 }
 
@@ -133,6 +131,7 @@ export class Enemy extends Character {
     enemyEat() {
         const enemyEating = document.querySelector('.enemy-eat');
         enemyEating.classList.toggle('eating');
+        updateEnemyHealthBar(this);
         setTimeout(() => {
             enemyEating.classList.toggle('eating');
         }, 1000)
@@ -145,7 +144,6 @@ export class Enemy extends Character {
         }
         else {
             this.eat();
-            // this.eatMotion('.enemy-food');
             this.enemyEat();
         }
     }

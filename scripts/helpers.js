@@ -19,7 +19,7 @@ const setBackground = (hero) => {
 }
 
 
-const updateHeroHealthBar = (hero) => {
+export const updateHeroHealthBar = (hero) => {
     const heroHealthNum = document.querySelector('.hero-health-num');
     const heroHealthBar = document.querySelector('.hero-health');
     const heroPercentage = Math.round((hero.health / hero.maxHealth) * 100);
@@ -34,7 +34,7 @@ const updateHeroHealthBar = (hero) => {
     }
 }
 
-const updateEnemyHealthBar = (enemy) => {
+export const updateEnemyHealthBar = (enemy) => {
     const enemyHealthNum = document.querySelector('.enemy-health-num');
     const enemyHealthBar = document.querySelector('.enemy-health');
     const enemyPercentage = Math.round((enemy.health / enemy.maxHealth) * 100);
@@ -79,7 +79,6 @@ const loadHeroFaceTemplate = hero => {
     document.querySelector('.hero-display').innerHTML = html;
 }
 
-
 export const disableButtons = () => {
     document.querySelectorAll('.attack-btn, .eat-btn').forEach(button => button.disabled = true);
 }
@@ -90,13 +89,11 @@ const enableButtons = () => {
 
 const enemyTurn = (hero, enemy) => {
     setTimeout(() => {
+        if (enemy.health <= 0) return;
         enemy.generateFood();
         enemy.randomMove.call(enemy, hero);
-        updateEnemyHealthBar(enemy);
         enableButtons();
-
-        console.log(hero, enemy);
-    }, 3000); // !!!! Make this longer when finished
+    }, 3000);
 }
 
 const setUpAttackBtn = (hero, enemy) => {
@@ -106,18 +103,11 @@ const setUpAttackBtn = (hero, enemy) => {
     
     attackButton.addEventListener('click', () => {
         attack(enemy);
-        updateEnemyHealthBar(enemy);
         heroThrowMove();
-
-        if (enemy.health > 0) {
-            hero.generateFood();
-            updateFoodItem(hero);
-            enemyTurn(hero, enemy);
-            updateHeroHealthBar(hero);
-        }
-
+        hero.generateFood();
+        updateFoodItem(hero);
+        enemyTurn(hero, enemy);
         disableButtons();
-        console.log(enemy);
     });
 }
 
@@ -128,14 +118,11 @@ const setUpEatBtn = (hero, enemy) => {
     eatButton.addEventListener('click', () => {
         eating();
         eat();
-        // hero.eatMotion('.hero-food');
         updateHeroHealthBar(hero);
         hero.generateFood();
         updateFoodItem(hero);
         enemyTurn(hero, enemy);
-
         disableButtons();
-        console.log(hero);
     });
 }
 

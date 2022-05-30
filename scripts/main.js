@@ -1,7 +1,6 @@
 import { setUpGame } from './helpers.js';
 import { heroes } from './objects.js';
 import { generateHero, generateEnemy } from './helpers.js';
-// import { selectSound } from './helpers.js';
 
 let gameHero;
 let gameEnemy = generateEnemy();
