@@ -92,6 +92,14 @@ export class Hero extends Character {
             heroFood.classList.toggle('.move-right');
         }, 1000);
     }
+
+    heroEat() {
+        const heroEating = document.querySelector('.hero-eat');
+        heroEating.classList.toggle('eating');
+        setTimeout(() => {
+            heroEating.classList.toggle('eating');
+        }, 1000)
+    }
 }
 
 export class Enemy extends Character {
@@ -112,6 +120,14 @@ export class Enemy extends Character {
         }, 1000);
     }
 
+    enemyEat() {
+        const enemyEating = document.querySelector('.enemy-eat');
+        enemyEating.classList.toggle('eating');
+        setTimeout(() => {
+            enemyEating.classList.toggle('eating');
+        }, 1000)
+    }
+
     randomMove(target) {
         if (Math.random() > 0.2) {
             this.attack(target);
@@ -120,6 +136,7 @@ export class Enemy extends Character {
         else {
             this.eat();
             this.eatMotion('.enemy-food');
+            this.enemyEat();
         }
     }
 }

@@ -73,7 +73,8 @@ body {
     overflow: hidden;
 }
 
-.hero-food, .enemy-food {
+.hero-food,
+.enemy-food {
     position: absolute;
     align-self: center;
     z-index: 10;
@@ -128,7 +129,8 @@ body {
     padding: 0.1rem;
 }
 
-.hero-health, .enemy-health {
+.hero-health,
+.enemy-health {
     background: #09ff00;
 }
 
@@ -150,32 +152,58 @@ body {
     right: 0;
 }
 
-.enemy-face, .hero-face {
+.enemy-face,
+.hero-face {
     position: relative;
 }
 
-.enemy-standing, .enemy-throwing {
+.enemy-standing,
+.enemy-throwing {
     transform: scale(0.5) translate(0, -50%);
 }
 
-.hero-standing, .hero-throwing {
+.hero-standing,
+.hero-throwing {
     transform: translate(25%, -25%) scale(1);
 }
 
-.eating {
-    animation: eating 0.5s;
+.hero-eat,
+.enemy-eat {
+    transform: scale(0.1);
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+    width: 50%;
+    position: absolute;
+    background: white;
+    text-align: center;
 }
 
-@keyframes eating {
-    0% {
-        transform: translate3d(0, 0, 0);
-    }
+.hero-eat {
+    font-size: 3rem;
+    top: -35%;
+    right: -65%;
+}
 
-    50% {
-        transform: translate3d(25%, 0, 1);
-    }
+.enemy-eat {
+    width: 50%;
+    top: 20%;
+    left: 0;
+}
 
-    100% {
-        transform: translate3d(0, 0, 0);
-    }
+.hero-eat::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -25%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 50px 20px 0;
+    border-color: transparent #FFF transparent transparent;
+}
+
+.eating {
+    transform: scale(1);
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
 }

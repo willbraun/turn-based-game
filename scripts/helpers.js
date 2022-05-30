@@ -126,9 +126,11 @@ const setUpAttackBtn = (hero, enemy) => {
 const setUpEatBtn = (hero, enemy) => {
     const eatButton = document.querySelector('.eat-btn');
     const eat = hero.eat.bind(hero)
+    const eating = hero.heroEat.bind(hero);
     const eatFood = document.getElementById("eatFood")
     eatButton.addEventListener('click', () => {
         eatFood.play()
+        eating();
         eat();
         hero.eatMotion('.hero-food');
         updateHeroHealthBar(hero);
