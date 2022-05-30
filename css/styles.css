@@ -257,4 +257,15 @@ body {
   transition: all 0.2s ease-in-out;
 }
 
+.move-left {
+  animation: throwLeft 1s;
+}
+@keyframes throwLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100);
+  }
+}
 /*# sourceMappingURL=styles.css.map */
