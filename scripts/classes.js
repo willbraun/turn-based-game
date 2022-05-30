@@ -12,8 +12,6 @@ export class Character {
         this.backgroundImg = backgroundImg;
         this.standImg = standImg;
         this.throwImg = throwImg;
-        // this.foodStart = foodStart;
-
     }
 
     attack(target) {
@@ -25,14 +23,6 @@ export class Character {
         else {
             target.health = newHealth;
         }
-
-        // if (this instanceof Hero) {
-        //     this.foodStart.classList.add('throwAtEnemy');
-        // }
-        // else {
-        //     this.foodStart.classList.add('throwAtHero');
-        // }
-
     }
 
     eat() {
@@ -87,11 +77,11 @@ export class Hero extends Character {
 
         const heroFood = document.querySelector('.hero-food');
         heroFood.innerHTML = this.currentFood.icon;
-        heroFood.classList.toggle('.move-left');
+        heroFood.classList.toggle('.move-right');
         setTimeout(() => {
             heroStanding.src = `./files/${this.standImg}`;
             heroStanding.style.transform = 'translate(25%, -25%) scale(1)';
-            heroFood.classList.toggle('.move-left');
+            heroFood.classList.toggle('.move-right');
         }, 1000);
     }
 }
@@ -107,10 +97,10 @@ export class Enemy extends Character {
 
         const enemyFood = document.querySelector('.enemy-food');
         enemyFood.innerHTML = this.currentFood.icon;
-        enemyFood.classList.toggle('.move-right');
+        enemyFood.classList.toggle('.move-left');
         setTimeout(() => {
             enemyStanding.src = `./files/${this.standImg}`;
-            enemyFood.classList.toggle('.move-right');
+            enemyFood.classList.toggle('.move-left');
         }, 1000);
     }
 
