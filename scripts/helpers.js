@@ -96,7 +96,7 @@ const enemyTurn = (hero, enemy) => {
         enableButtons();
 
         console.log(hero, enemy);
-    }, 10); // !!!! Make this longer when finished
+    }, 3000); // !!!! Make this longer when finished
 }
 
 const setUpAttackBtn = (hero, enemy) => {
