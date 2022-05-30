@@ -51,6 +51,7 @@ body {
   font-family: "Permanent Marker", cursive;
   position: relative;
   height: 100vh;
+  overflow: hidden;
 }
 
 .hidden {
