@@ -115,6 +115,23 @@ body {
   overflow: hidden;
 }
 
+.hero-food, .enemy-food {
+  position: absolute;
+  align-self: center;
+  z-index: 10;
+  font-size: 10rem;
+}
+
+.hero-food {
+  top: 20%;
+  left: 80%;
+}
+
+.enemy-food {
+  top: 40%;
+  right: 20%;
+}
+
 .food-display {
   font-size: 2rem;
   width: 50%;

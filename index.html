@@ -104,10 +104,6 @@
         </div>
 
 
-
-        <button class="TEST-BUTTON btn">Testing</button>
-
-
         <script id="hero-template" type="text/x-handlebars-template">
             <div class="game-wrapper">
 
@@ -146,6 +142,7 @@
                 
                 <div class="enemy-face h-50 w-50 position-relative">
                     <img src="./files/{{this.standImg}}" class="enemy-standing" alt="SF" wiidth="100%">
+                    <div class="enemy-food">🍉</div>
                 </div>
                 
             </div>
@@ -156,7 +153,9 @@
             <div class="hero-display-wrapper d-flex flex-column justify-content-center align-items-start w-100 h-100">
                 <div class="hero-face h-50 w-50 position-realative">
                     <img src="./files/{{this.standImg}}" class="hero-standing" alt="standing" width="100%">
+                    <div class="hero-food"></div>
                 </div>
+                
             </div>
         </script>
 

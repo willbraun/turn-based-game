@@ -21,8 +21,8 @@ const selectLevi = document.querySelector('.select-hero-three');
 
 
         // testing
-        const win = gameHero.gameOver.bind(gameHero);
-        document.querySelector('.TEST-BUTTON').addEventListener('click',win);
+        // const win = gameHero.gameOver.bind(gameHero);
+        // document.querySelector('.TEST-BUTTON').addEventListener('click',win);
     });
 });
 
