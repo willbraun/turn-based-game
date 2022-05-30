@@ -130,6 +130,7 @@ const setUpEatBtn = (hero, enemy) => {
     eatButton.addEventListener('click', () => {
         eatFood.play()
         eat();
+        hero.eatMotion('.hero-food');
         updateHeroHealthBar(hero);
         hero.generateFood();
         updateFoodItem(hero);

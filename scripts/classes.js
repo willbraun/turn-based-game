@@ -39,6 +39,14 @@ export class Character {
         this.currentFood = getRandom(foods);
     };
 
+    eatMotion(foodLocationClass) {
+        const foodLocation = document.querySelector(foodLocationClass);
+        foodLocation.classList.toggle('.eating');
+        setTimeout(() => {
+            foodLocation.classList.toggle('.eating');
+        }, 1000);
+    }
+
     gameOver() {
         disableButtons();
 
@@ -111,6 +119,7 @@ export class Enemy extends Character {
         }
         else {
             this.eat();
+            this.eatMotion('.enemy-food');
         }
     }
 }
