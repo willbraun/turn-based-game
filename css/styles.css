@@ -260,6 +260,7 @@ body {
 .move-left {
   animation: throwLeft 1s;
 }
+
 @keyframes throwLeft {
   0% {
     transform: translateX(0);
