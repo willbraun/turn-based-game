@@ -23,6 +23,8 @@ export class Character {
         else {
             target.health = newHealth;
         }
+        const throwSound = document.getElementById('throw-sound');
+        throwSound.play();
     }
 
     eat() {
@@ -33,19 +35,21 @@ export class Character {
         else {
             this.health = newHealth;
         }
+        const eatSound = document.getElementById("eat-sound");
+        eatSound.play();
     }
 
     generateFood() {
         this.currentFood = getRandom(foods);
     };
 
-    eatMotion(foodLocationClass) {
-        const foodLocation = document.querySelector(foodLocationClass);
-        foodLocation.classList.toggle('.eating');
-        setTimeout(() => {
-            foodLocation.classList.toggle('.eating');
-        }, 1000);
-    }
+    // eatMotion(foodLocationClass) {
+    //     const foodLocation = document.querySelector(foodLocationClass);
+    //     foodLocation.classList.toggle('.eating');
+    //     setTimeout(() => {
+    //         foodLocation.classList.toggle('.eating');
+    //     }, 1000);
+    // }
 
     gameOver() {
         disableButtons();
@@ -86,6 +90,7 @@ export class Hero extends Character {
         const heroFood = document.querySelector('.hero-food');
         heroFood.innerHTML = this.currentFood.icon;
         heroFood.classList.toggle('.move-right');
+
         setTimeout(() => {
             heroStanding.src = `./files/${this.standImg}`;
             heroStanding.style.transform = 'translate(25%, -25%) scale(1)';
@@ -115,6 +120,7 @@ export class Enemy extends Character {
         const enemyFood = document.querySelector('.enemy-food');
         enemyFood.innerHTML = this.currentFood.icon;
         enemyFood.classList.toggle('.move-left');
+
         setTimeout(() => {
             enemyStanding.src = `./files/${this.standImg}`;
             enemyFood.innerHTML = "";
@@ -137,7 +143,7 @@ export class Enemy extends Character {
         }
         else {
             this.eat();
-            this.eatMotion('.enemy-food');
+            // this.eatMotion('.enemy-food');
             this.enemyEat();
         }
     }

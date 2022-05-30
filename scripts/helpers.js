@@ -102,14 +102,12 @@ const enemyTurn = (hero, enemy) => {
 const setUpAttackBtn = (hero, enemy) => {
     const attackButton = document.querySelector('.attack-btn');
     const attack = hero.attack.bind(hero);
-    const heroThrow = document.getElementById('hero-throw');
     const heroThrowMove = hero.heroThrow.bind(hero);
     
     attackButton.addEventListener('click', () => {
         attack(enemy);
         updateEnemyHealthBar(enemy);
         heroThrowMove();
-        heroThrow.play();
 
         if (enemy.health > 0) {
             hero.generateFood();
@@ -126,13 +124,11 @@ const setUpAttackBtn = (hero, enemy) => {
 const setUpEatBtn = (hero, enemy) => {
     const eatButton = document.querySelector('.eat-btn');
     const eat = hero.eat.bind(hero)
-    const eating = hero.heroEat.bind(hero);
-    const eatFood = document.getElementById("eatFood")
+    const eating = hero.heroEat.bind(hero); 
     eatButton.addEventListener('click', () => {
-        eatFood.play()
         eating();
         eat();
-        hero.eatMotion('.hero-food');
+        // hero.eatMotion('.hero-food');
         updateHeroHealthBar(hero);
         hero.generateFood();
         updateFoodItem(hero);
