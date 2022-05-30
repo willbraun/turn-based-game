@@ -89,13 +89,13 @@ export class Hero extends Character {
 
         const heroFood = document.querySelector('.hero-food');
         heroFood.innerHTML = this.currentFood.icon;
-        heroFood.classList.toggle('.move-right');
+        heroFood.classList.toggle('move-right');
 
         setTimeout(() => {
             heroStanding.src = `./files/${this.standImg}`;
             heroStanding.style.transform = 'translate(25%, -25%) scale(1)';
             heroFood.innerHTML = "";
-            heroFood.classList.toggle('.move-right');
+            heroFood.classList.toggle('move-right');
         }, 1000);
     }
 
@@ -119,12 +119,12 @@ export class Enemy extends Character {
 
         const enemyFood = document.querySelector('.enemy-food');
         enemyFood.innerHTML = this.currentFood.icon;
-        enemyFood.classList.toggle('.move-left');
+        enemyFood.classList.toggle('move-left');
 
         setTimeout(() => {
             enemyStanding.src = `./files/${this.standImg}`;
             enemyFood.innerHTML = "";
-            enemyFood.classList.toggle('.move-left');
+            enemyFood.classList.toggle('move-left');
         }, 1000);
     }
 
