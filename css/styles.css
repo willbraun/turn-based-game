@@ -259,7 +259,7 @@ body {
 
 .hero-throwing,
 .move-left {
-  animation: throwLeft 1s;
+  animation: throwLeft 1s linear;
 }
 
 .hero-throwing,
