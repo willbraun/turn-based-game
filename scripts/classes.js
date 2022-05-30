@@ -24,7 +24,9 @@ export class Character {
             target.health = newHealth;
         }
         const throwSound = document.getElementById('throw-sound');
+        const hitSound = document.getElementById('hit-sound');
         throwSound.play(); 
+        setTimeout(() => hitSound.play(), 1000);
     }
 
     eat() {
