@@ -225,9 +225,10 @@ body {
 }
 
 .enemy-eat {
-  width: 50%;
+  width: 25%;
+  font-size: 1.5rem;
   top: 20%;
-  left: 0;
+  left: 20%;
 }
 
 .hero-eat::before {
@@ -240,6 +241,18 @@ body {
   border-style: solid;
   border-width: 20px 50px 20px 0;
   border-color: transparent #FFF transparent transparent;
+}
+
+.enemy-eat::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -15%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0 10px 30px;
+  border-color: transparent transparent transparent #fff;
 }
 
 .eating {
