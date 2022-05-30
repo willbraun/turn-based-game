@@ -89,6 +89,7 @@ export class Hero extends Character {
         setTimeout(() => {
             heroStanding.src = `./files/${this.standImg}`;
             heroStanding.style.transform = 'translate(25%, -25%) scale(1)';
+            heroFood.innerHTML = "";
             heroFood.classList.toggle('.move-right');
         }, 1000);
     }
@@ -116,6 +117,7 @@ export class Enemy extends Character {
         enemyFood.classList.toggle('.move-left');
         setTimeout(() => {
             enemyStanding.src = `./files/${this.standImg}`;
+            enemyFood.innerHTML = "";
             enemyFood.classList.toggle('.move-left');
         }, 1000);
     }
