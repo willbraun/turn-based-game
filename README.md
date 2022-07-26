@@ -12,7 +12,7 @@ We also were recommended to practice with:
 * CSS Flexbox
 * SASS
 * Handlebars.JS
-* and JS Modules
+* JS Modules
 
 Our assignment outline was as follows: 
  - The gameplay should go back and forth between an enemy and the player, each inflicting damage on the other when they launch a successful attack.
@@ -29,6 +29,7 @@ Our assignment outline was as follows:
 Our game is inspired by Pokemon but with a food fight theme. The selected hero has two different actions they can choose from:
 - Attacking
 - Eating
-The player can choose wether they would like to attack with the current food in their hand, or to eat it to regain health.
-Each of the three different characters the player can choose from have varying levels of health and attack damge multipliers.
+
+The player can choose whether they would like to attack with the current food in their hand, or to eat it to regain health.
+Each of the three different characters the player can choose from have varying levels of health and attack damage multipliers.
 
